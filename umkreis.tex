@@ -1,0 +1,83 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+\begin{tikzpicture}
+\tkzSetUpPoint[shape=cross out,size=10,color=black]
+\tkzInit[ymin=-3.5,ymax=3.5,xmin=-3,xmax=7]
+\tkzClip[space=.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(4,0){B}
+\tkzDrawTriangle[two angles=45 and 35](A,B) \tkzGetPoint{C}
+
+\tkzLabelPoint[left](A){$A$}
+\tkzLabelPoint[right](B){$B$}
+\tkzLabelPoint[above](C){$C$}
+
+\tkzDefPointBy[rotation in rad= center A angle pi/3](B) \tkzGetPoint{R}
+\tkzDefPointBy[rotation in rad= center A angle -pi/3](B) \tkzGetPoint{S}
+\tkzDrawArc[dotted, color=gray](A,S)(R)
+\tkzDrawArc[dotted, color=gray](B,R)(S)
+\tkzCompass[color=red](A,R)
+\tkzCompass[color=red](B,R)
+\tkzCompass[color=red](A,S)
+\tkzCompass[color=red](B,S)
+\tkzDrawLine[color=orange](R,S)
+
+\tkzDefPointBy[rotation in rad= center A angle pi/3](C) \tkzGetPoint{T}
+\tkzDefPointBy[rotation in rad= center A angle -pi/3](C) \tkzGetPoint{U}
+\tkzDrawArc[dotted, color=gray](A,U)(T)
+\tkzDrawArc[dotted, color=gray](C,T)(U)
+\tkzCompass[color=red](A,T)
+\tkzCompass[color=red](C,T)
+\tkzCompass[color=red](A,U)
+\tkzCompass[color=red](C,U)
+\tkzDrawLine[color=orange](T,U)
+
+\tkzInterLL(R,S)(T,U) \tkzGetPoint{M}
+\tkzDrawPoint(M)
+\tkzDrawCircle[color=blue](M,A)
+
+% \tkzMarkRightAngle(A,C,B)
+% \tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+% size=1](B,A,C)
+% \tkzLabelAngle[pos=.75](B,A,C){\(\alpha\)}
+% \tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+% size=1](C,B,A)
+% \tkzLabelAngle[pos=.75](C,B,A){\(\beta\)}
+
+\end{tikzpicture}
+
+
+\end{document}

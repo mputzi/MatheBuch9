@@ -1,0 +1,132 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+
+% \psset{Beta=20,Alpha=160,zMax=2, zMin=-2, yMax=2, yMin=-2, xMin=-0.5, xMax=6.5, pOrigin=c, unit=1cm}
+%  \pstThreeDCoor[]
+ \psset{linewidth=0.5pt}
+  \psset{viewpoint=100 45 20 rtp2xyz,Decran=100}
+%   \psset{lightsrc=10 20 30}
+  \psset{lightsrc=viewpoint}
+  
+  
+  
+  \begin{pspicture}(-1.3,-0.5)(1.3,3.2)
+\psset{solidmemory}
+%  \axesIIID[](0,0,0)(1,1,1)  
+
+%  \psPoint(0,-1,0){A}
+%  \psPoint(0,-1,3){B}
+% %  \uput[r](A){$\mathrm{A}$}
+% %  \uput[r](B){$\mathrm{B}$}
+%  \pcline[offset=-0.2]{|<->|}(A)(B)
+%  \nbput*{$h$}
+ 
+ \psSolid[
+ base=-0.577 -0.577 0.577 -0.577  0 1,
+ showBase,
+object=prisme,
+ngrid= 20 2,
+action=draw*,
+linecolor=black,
+opacity=0.8,
+fillcolor=gray!10,
+% fcol=0 (red),
+% show=all,
+ h=3, name=prisma]
+ 
+ \psset{fontsize=20}
+ \psSolid[object=plan,action=none,opacity=0.5, definition=solidface,args=prisma 0,name=P0,]
+ \psSolid[object=point, action=none, definition=solidcentreface, args=prisma 1, name=G]
+ \psProjection[object=texte,linecolor=black,text=G,plan=P0,]
+%  \psset{phi=135}
+% 
+%   \psSolid[object=plan, action=none, definition=solidface, args=prisma 0, name=P1] (G)
+%   \psProjection[object=texte,linecolor=gray,text={G},plan=P1]
+ \end{pspicture}
+ \begin{pspicture}(-1.3,-0.5)(1.3,3.2)
+\psset{solidmemory}
+%  \axesIIID[](0,0,0)(1,1,1)  
+ \pstVerb{
+/torsion {% on tourne de 10 degr\’{e}s suivant l’axe Oz \‘{a} chaque niveau
+ 2 dict begin
+/M defpoint3d % on r\’{e}cup\‘{e}re les coordonn\’{e}es
+ M /z exch def pop pop
+ M 0 0 z 45 mul rotateOpoint3d
+ end} def}%
+  \psSolid[axe=0 0 1, base=-0.577 -0.577 0.577 -0.577  0 1,
+object=prisme,
+ngrid=20 2,
+transform=torsion,
+action=draw*,
+linecolor=black,
+ opacity=0.8,
+fillcolor=gray!10,
+% fcol=0 (red),
+% show=all,
+ h=3, name=prisma]
+ 
+ \psset{fontsize=20}
+ \psSolid[object=plan,action=none,opacity=0.5, definition=solidface,args=prisma 0,name=P0,]
+ \psSolid[object=point, action=none, definition=solidcentreface, args=prisma 1, name=G]
+\psProjection[object=texte,linecolor=black,text=G,plan=P0]
+% \psset{phi=112.5}
+%   \psSolid[object=plan, action=none, definition=solidface, args=prisma 0, name=P1] (G)
+%   \psProjection[object=texte,linecolor=gray,text={G},plan=P1]
+\end{pspicture}
+ \begin{pspicture}(-1,-0.5)(2,3.2)
+\psset{solidmemory}
+%  \axesIIID[](0,0,0)(1,1,1)  
+ \pstVerb{
+/torsion {% on tourne de 10 degr\’{e}s suivant l’axe Oz \‘{a} chaque niveau
+ 2 dict begin
+/M defpoint3d % on r\’{e}cup\‘{e}re les coordonn\’{e}es
+ M /z exch def pop pop
+ M -.1 z mul 0.3 z mul 0  translatepoint3d
+ end} def}%
+  \psSolid[axe=0 0 1, base=-0.577 -0.577 0.577 -0.577  0 1,
+object=prisme,
+ngrid=20 2,
+transform=torsion,
+action=draw*,
+linecolor=black,
+ opacity=0.8,
+fillcolor=gray!10,
+% fcol=0 (red),
+% show=all,
+ h=3, name=prisma]
+ 
+ \psset{fontsize=20}
+ \psSolid[object=plan,action=none,opacity=0.5, definition=solidface,args=prisma 0,name=P0,]
+ \psSolid[object=point, action=none, definition=solidcentreface, args=prisma 1, name=G]
+\psProjection[object=texte,linecolor=black,text=G,plan=P0]
+% \psset{phi=112.5}
+%   \psSolid[object=plan, action=none, definition=solidface, args=prisma 0, name=P1] (G)
+%   \psProjection[object=texte,linecolor=gray,text={G},plan=P1]
+\end{pspicture}
+
+\end{document}

@@ -1,0 +1,132 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm,scale=1]
+\tkzInit[ymin=0,ymax=5,xmin=-2,xmax=6]
+\tkzClip[space=.5]
+\tkzSetUpPoint[shape=cross out,size=10,color=black]
+
+\tkzDefPoint(-1,2){A}
+\tkzDefPoint(5,4){B}
+\tkzDrawPoints(A,B)
+\tkzLabelPoint[above](A){$A$}
+\tkzLabelPoint[above](B){$B$}
+\tkzDrawLine[add = .2 and .2](A,B)
+\tkzLabelLine[above, near end](A,B){$g$}
+\tkzDefPoint(2,2){P}
+\tkzLabelPoint[below](P){$P$}
+\tkzDrawPoint(P)
+
+\tkzDefBarycentricPoint(A=3,B=4) \tkzGetPoint{I}
+\tkzDrawCircle[radius,color=gray,thin,dotted](P,I)
+
+\tkzInterLC[](A,B)(P,I) \tkzGetPoints{J}{H}
+\tkzDrawPoints(J,H)
+\tkzCompass[color=gray](P,J)
+\tkzCompass[color=gray](P,H)
+\tkzDefPointBy[reflection= over A--B](P) \tkzGetPoint{Q}
+
+\tkzCompass[color=red](J,P)
+\tkzCompass[color=red](H,P)
+\tkzCompass[color=red](J,Q)
+\tkzCompass[color=red](H,Q)
+
+\tkzDrawLine[color=gray, add = 1 and 0](P,Q)
+
+\tkzInterLC[](P,Q)(P,I) \tkzGetPoints{S}{T}
+\tkzDrawPoints[color=blue](S,T)
+\tkzInterCC[](S,T)(T,S) \tkzGetPoints{X}{Y}
+\tkzCompass[color=blue](S,X)
+\tkzCompass[color=blue](S,Y)
+\tkzCompass[color=blue](T,X)
+\tkzCompass[color=blue](T,Y)
+\tkzDrawLine[color=blue](X,Y)
+\tkzLabelLine[color=blue, below, near end](X,Y){$p$}
+
+
+% \tkzDrawLine[add= 0 and .3](S,A)
+% \tkzDrawLine[add= 0 and .25](S,B)
+% \tkzDefLine[bisector](A,S,B) \tkzGetPoint{Z}
+% \tkzDefCircle[radius](S,T)
+% \tkzInterLC[](S,A)(S,T) \tkzGetSecondPoint{P}
+% % \tkzDrawPoint(P)
+% \tkzLabelPoint[above](P){$P$}
+% \tkzInterLC[](S,B)(S,T) \tkzGetSecondPoint{Q}
+% % \tkzDrawPoint(Q)
+% \tkzLabelPoint[below right](Q){$Q$}
+% \tkzDrawSegment[dotted,color=gray](P,Q)
+% \tkzDrawLine[add=0 and 1,color=blue ](S,Z)
+% \tkzShowLine[bisector,size=5,gap=6](A,S,B)
+% \tkzLabelSegment[near end, color=blue](S,Z){$w$}
+% 
+% 
+% % \small
+%  \tkzProtractor[with = half, scale = 0.75](S,A)
+% % \normalsize
+% \tkzDrawLine[add = .5 and 0,color=black](A,B)
+% \tkzDrawLine[add = 0 and 0,color=black](B,C)
+% \tkzDrawLine[add = 0 and .5,color=black](C,A)
+% \tkzLabelLine[sloped, midway, below](A,B){$c$}
+% \tkzLabelLine[sloped, midway, above](B,C){$a$}
+% \tkzLabelLine[sloped, midway, above](C,A){$b$}
+% \tkzDrawPoints(A,B,C)
+% \tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+% size=1.5](B,A,C)
+% \tkzLabelAngle(B,A,C){\(\alpha\)}
+% \tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+% size=1.5](C,B,A)
+% \tkzLabelAngle[pos=-1](C,B,A){\(\beta\)}
+% \tkzMarkAngle[fill=red, opacity=.3, %mkpos=.2,%
+% size=1.5](A,C,B)
+% \tkzLabelAngle(A,C,B){\(\gamma\)}
+% \tkzDefLine[parallel=through A](B,C) \tkzGetPoint{E}
+% \tkzDrawLine[add = .5 and 0,color=black](A,E)
+% \tkzMarkAngle[fill=red, opacity=.3, %mkpos=.2,%
+% size=1.5](C,A,E)
+% \tkzDefPointBy[rotation=center A angle 180](B) \tkzGetPoint{D}
+% \tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+% size=1.5](E,A,D)
+% \small
+% \tkzDefPoint(5,5){tt}
+% % \tkzLabelPoint[draw,fill=white,%
+% % text width=3cm,text centered, anchor=center](tt){\(\alpha=\measuredangle ASB=\measuredangle rs = 64\text{\degree}\)}
+% \tkzDefPoint(-5,5){tt2}
+% % \tkzLabelPoint[draw,fill=white,%
+% % text width=3cm,text centered, anchor=center](tt2){\(\beta=\measuredangle BSC=\measuredangle st = 116\text{\degree}\)}
+% \tkzLabelPoint[draw,fill=white,%
+% text width=3cm,text centered, anchor=center](tt2){\(\alpha + \beta + \gamma =180\text{\degree}\)}
+\end{tikzpicture}
+
+
+\end{document}

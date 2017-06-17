@@ -1,0 +1,81 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm,scale=0.6]
+\tkzSetUpPoint[shape=cross out,size=10,color=black]
+\tkzDefPoint(0,0){A}
+\tkzLabelPoint[below right](A){$A$}
+\tkzDefPoint(5,2){B}
+\tkzLabelPoint[right](B){$B$}
+\tkzDefPoint(1,4){C}
+\tkzLabelPoint[above](C){$C$}
+% \small
+% \tkzProtractor[with = half, scale = 0.75](S,A)
+% \normalsize
+\tkzDrawLine[add = .5 and 0,color=black](A,B)
+\tkzDrawLine[add = 0 and 0,color=black](B,C)
+\tkzDrawLine[add = 0 and .5,color=black](C,A)
+\tkzLabelLine[sloped, midway, below](A,B){$c$}
+\tkzLabelLine[sloped, midway, above](B,C){$a$}
+\tkzLabelLine[sloped, midway, above](C,A){$b$}
+\tkzDrawPoints(A,B,C)
+\tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+size=1.5](B,A,C)
+\tkzLabelAngle(B,A,C){\(\alpha\)}
+\tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+size=1.5](C,B,A)
+\tkzLabelAngle[pos=-1](C,B,A){\(\beta\)}
+\tkzMarkAngle[fill=red, opacity=.3, %mkpos=.2,%
+size=1.5](A,C,B)
+\tkzLabelAngle(A,C,B){\(\gamma\)}
+\tkzDefLine[parallel=through A](B,C) \tkzGetPoint{E}
+\tkzDrawLine[add = .5 and 0,color=black](A,E)
+\tkzMarkAngle[fill=red, opacity=.3, %mkpos=.2,%
+size=1.5](C,A,E)
+\tkzDefPointBy[rotation=center A angle 180](B) \tkzGetPoint{D}
+\tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+size=1.5](E,A,D)
+\small
+\tkzDefPoint(5,5){tt}
+% \tkzLabelPoint[draw,fill=white,%
+% text width=3cm,text centered, anchor=center](tt){\(\alpha=\measuredangle ASB=\measuredangle rs = 64\text{\degree}\)}
+\tkzDefPoint(-5,5){tt2}
+% \tkzLabelPoint[draw,fill=white,%
+% text width=3cm,text centered, anchor=center](tt2){\(\beta=\measuredangle BSC=\measuredangle st = 116\text{\degree}\)}
+\tkzLabelPoint[draw,fill=white,%
+text width=3cm,text centered, anchor=center](tt2){\(\alpha + \beta + \gamma =180\text{\degree}\)}
+\end{tikzpicture}
+
+
+\end{document}

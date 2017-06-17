@@ -1,0 +1,93 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+\usepackage{pst-eucl}
+\usepackage{color}
+\usepackage[euler-digits]{eulervm} % Math Font\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+\usepackage{nicefrac}
+% \usepackage{empheq}
+%  German Math Punctuation
+\DeclareMathSymbol{,}{\mathpunct}{letters}{"3B}
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+\DeclareMathSymbol{\decimal}{\mathord}{letters}{"3A}
+
+% \usepackage[dvipsnames]{xcolor}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+
+\psset{Beta=10,Alpha=170,zMax=6, zMin=0, yMax=6, yMin=0, xMin=0, xMax=6, pOrigin=c, unit=0.5cm}
+%   \pstThreeDCoor[]
+  \psset{linewidth=1pt}
+  \psset{viewpoint=20 20 20 rtp2xyz,Decran=75}
+  \psset{lightsrc=10 20 30}
+%   \psset{lightsrc=viewpoint}
+  
+  
+  
+  \begin{pspicture}(-8,-10)(17,10)
+ \psset{solidmemory}
+ \psSolid[object=grille,ngrid=8,base=0 4 0 4, linecolor=gray, linewidth=0.5pt](0,0,0)
+ \axesIIID[](0,0,0)(4,4,2)  
+ \psPoint(4,2,1){A}
+ \psPoint(2,3,3){B}
+ 
+ \psPoint(2,2,1){APP}
+ \psPoint(2,3,1){AP}
+ \psPoint(4,2,0){Axy}
+ \psPoint(2,2,0){APPxy}
+ \psPoint(2,3,0){APxy}
+ \psline[linecolor=lightgray, linestyle=dashed]{-}(A)(Axy)
+ \psline[linecolor=lightgray, linestyle=dashed]{-}(AP)(APxy)
+ \psline[linecolor=lightgray, linestyle=dashed]{-}(APP)(APPxy)
+ \pcline[linecolor=gray, linestyle=dashed]{-}(A)(APP)
+ \naput*{$\gray\Delta x$}
+ \pcline[linecolor=gray, linestyle=dashed]{-}(AP)(APP)
+ \nbput*{$\gray\Delta y$}
+ \pstRightAngle[linecolor=gray,RightAngleType=german]{A}{APP}{AP}
+ 
+ \pcline[offset=0,linecolor=orange]{-}(A)(AP)
+ \nbput*[]{$\color{orange} d_{xy}$}
+ \pcline[offset=0,linecolor=blue]{-}(B)(AP)
+ \naput*[]{$\blue\Delta z$}
+ 
+ \uput[l](A){$A$}
+ \uput[r](B){$B$}
+ \uput[r](AP){$P$}
+ \pcline[offset=0,linecolor=red]{|<->|}(A)(B)
+ \naput*{$\red d$}
+
+ \pstRightAngle[arrows=-,RightAngleType=german]{B}{AP}{A}
+ 
+ 
+%  \psProjection[object=texte,linecolor=black,text=G,plan=P0,phi=90]
+%  \psset{phi=135}
+% 
+%   \psSolid[object=plan, action=none, definition=solidface, args=prisma 0, name=P1] (G)
+%   \psProjection[object=texte,linecolor=gray,text={G},plan=P1]
+ \end{pspicture}
+ 
+
+\end{document}

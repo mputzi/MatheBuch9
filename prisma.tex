@@ -1,0 +1,124 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{pst-all}
+\usepackage{pst-3dplot}
+\usepackage{pst-solides3d}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+  \begin{pspicture}(-5,-1)(6,3.7)
+% \psset{Beta=20,Alpha=160,zMax=2, zMin=-2, yMax=2, yMin=-2, xMin=-0.5, xMax=6.5, pOrigin=c, unit=1cm}
+%  \pstThreeDCoor[]
+%  \psset{linewidth=0.5pt}
+  \psset{viewpoint=100 0 20 rtp2xyz,Decran=100}
+%   \psset{lightsrc=10 20 30}
+  \psset{lightsrc=viewpoint}
+  \psset{solidmemory}
+  
+% \axesIIID[](0,0,0)(1,1,1)  
+
+ \psPoint(0,-1,0){A}
+ \psPoint(0,-1,3){B}
+%  \uput[r](A){$\mathrm{A}$}
+%  \uput[r](B){$\mathrm{B}$}
+ \pcline[offset=-0.2]{|<->|}(A)(B)
+ \nbput*{$h$}
+ 
+ \psSolid[axe=0 0 1,base=
+-1 -3 1 -3 0 -1,
+object=prisme,
+action=draw*,
+linecolor=black,
+opacity=0.5,
+fillcolor=gray!20,
+fcol=0 (red),
+show=all,
+ h=3, name=prisma]
+ 
+ \psset{fontsize=40}
+ \psSolid[object=plan,action=none,opacity=0.5, definition=solidface,args=prisma 0,name=P0,]
+ \psSolid[object=point, action=none, definition=solidcentreface, args=prisma 1, name=G]
+ \psProjection[object=texte,linecolor=black,text=G,plan=P0,]
+%  \psset{phi=135}
+
+  \psSolid[object=plan, action=none, definition=solidface, args=prisma 0, name=P1] (G)
+  \psProjection[object=texte,linecolor=gray,text={G},plan=P1]
+ 
+  \psSolid[axe=0 0.5 1,base=
+1 3 -1 3 0 1,
+object=prisme,
+action=draw*,
+linecolor=black,
+opacity=0.5,
+fillcolor=gray!20,
+fcol=0 (red),
+show=all,
+ h=3.354, name=prismatwo]
+%   \psSolid[object=plan, action=draw, definition=solidface, args=prismatwo 0,name=P2] 
+ \psSolid[object=plan, action=draw, definition=normalpoint, args={0 0 0 [1 0 0 0 0 1]}, fillcolor=white,
+base=-2 2 -4 5,name=P2] 
+ \psSolid[object=plan,  definition=normalpoint, args={0 0 3 [1 0 0 0 0 1]},
+base=-2 2 -4 5,visibility=false, linestyle=dashed,action=draw,name=P3]
+
+%  \psPoint(0,0,3.5){G} \rput(G){$G$}
+%  \psSolid[object=line,
+%     args= 0 0 3.5 0 0 3]
+ 
+ 
+ 
+%  \pstIIIDCylinder[fillcolor=gray,fillstyle=solid,linecolor=black!20, hiddenLine=true,increment=0.4](-3,0,0){1.41}{0.6}
+%  \pstPlanePut[plane=xy,pOrigin=c](-3,0,1){$A= 2\pi$}
+%  \pstIIIDCylinder[hiddenLine=true, increment=180](-3,0,0){1.41}{1}
+% 
+%  \pstThreeDLine[linecolor=blue](-1.59,0,1)(0,0,1)
+%  \pstThreeDLine[linecolor=blue](-1.59,0,0.6)(0,0,0.6)
+%  \pstThreeDLine[linecolor=blue](-1.59,0,0)(0,0,0)
+%  
+%  \pstIIIDCylinder[RotY=90, hiddenLine=true, increment=180](0,0,0){1}{1}
+%  \pstIIIDCylinder[RotY=90, fillcolor=black!20,fillstyle=solid,linecolor=gray,increment=2](0,0,0){0.6}{1.666}
+% %  \pstThreeDCircle[fillcolor=black!20,fillstyle=solid](0,0,0)(0,0,0.6)(0,1,0)
+% 
+%  \pstThreeDLine[linecolor=red](1.666,0,0)(3,0,0)
+%  
+%   \parametricplotThreeD[plotstyle=curve,drawStyle=xLines,xPlotpoints=25,yPlotpoints=25,hiddenLine=true](0,360)(1.666,6){u 1 u div t sin mul 1 u div t cos mul}
+%  \psplotThreeD[plotstyle=curve](1,6)(0,0){1 x div}
+%  
+%  \pstThreeDLine[linestyle=dashed](-3,0,1) (-3,0,1.8)
+%  \pstThreeDLine[linestyle=dashed](-1.59,0,1) (-1.59,0,1.8)
+%  \pstThreeDLine[](-1.59,0,1.8)(-3,0,1.8)
+%  \pstPlanePut[plane=xz](-2.25,0,2){$\sqrt{2}$}
+%  
+%  \pstThreeDLine[](-1,0,0)(-1,0,1)
+%  \pstPlanePut[plane=xz](-1,0,0.5){$1$}
+%  
+%  \pstThreeDLine[](0,0,1.8)(1,0,1.8)
+%  \pstThreeDLine[linestyle=dashed](1,0,1) (1,0,1.8)
+%  \pstThreeDLine[linestyle=dashed](0,0,1) (0,0,1.8)
+%  \pstPlanePut[plane=xz](0.5,0,2){$1$}
+%  
+%  \pstPlanePut[plane=xz](3,0,1){$r=\frac{1}{x}$}
+%  
+%  \pstPlanePut[plane=xz,pOrigin=c](0.8,0,-1.5){$M=2\pi$}
+\end{pspicture}
+
+
+\end{document}

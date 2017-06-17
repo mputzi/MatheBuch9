@@ -1,0 +1,365 @@
+%%% DOCUMENTCLASS 
+%%%-------------------------------------------------------------------------------
+
+\documentclass[
+a6paper, % Stock and paper size.
+11pt, % Type size.
+% article,
+% oneside, 
+onecolumn, % Only one column of text on a page.
+% openright, % Each chapter will start on a recto page.
+% openleft, % Each chapter will start on a verso page.
+openany, % A chapter may start on either a recto or verso page.
+]{memoir}
+
+%%% PACKAGES 
+%%%------------------------------------------------------------------------------
+
+\usepackage[utf8]{inputenc} % If utf8 encoding
+% \usepackage[lantin1]{inputenc} % If not utf8 encoding, then this is probably the way to go
+\usepackage[T1]{fontenc}    %
+\usepackage[ngerman]{babel} % English please
+\usepackage{eurosym}
+\usepackage[final]{microtype} % Less badboxes
+
+\usepackage[pass,a6paper]{geometry}
+
+% \usepackage{kpfonts} %Font
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+\usepackage{nicefrac}
+% \usepackage{empheq}
+%  German Math Punctuation
+\DeclareMathSymbol{,}{\mathpunct}{letters}{"3B}
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B}
+\DeclareMathSymbol{\decimal}{\mathord}{letters}{"3A}
+% Typesetting Theorems
+\allowdisplaybreaks
+\usepackage[amsmath,thmmarks,hyperref,thref]{ntheorem}
+
+
+\theoremstyle{break}
+\theorembodyfont{\upshape}
+% \theoremsymbol{\ensuremath{\diamondsuit}}
+\newtheorem{defi}{Definition}
+
+% \renewcommand{\thedefi}{\arabic{defi}}
+\theoremstyle{break}
+\theoremsymbol{}
+\newtheorem{beme}[defi]{Bemerkung}
+
+\theorembodyfont{\itshape}
+% \theoremsymbol{\ensuremath{\triangledown}}
+\newtheorem{satz}[defi]{Satz}
+\newtheorem{lemm}[defi]{Lemma}
+\newtheorem{folg}[defi]{Folgerung}
+
+\theorembodyfont{\upshape}
+% \theoremsymbol{\ensuremath{\bigstar}}
+% \theoremseparator{:}
+\newtheorem{regel}[defi]{Regel}
+
+\theoremstyle{changebreak}
+\theorembodyfont{\itshape}
+\theoremprework{\bigskip\begin{center}
+ \includegraphics[width=.5\textwidth]{./Vintage-Decorative-Divider.pdf}
+ % Vintage-Decorative-Divider.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+\end{center}}
+\newtheorem{ssatz}[defi]{Satz}
+
+\theoremprework{}
+\theorempostwork{}
+\theoremstyle{nonumberbreak}
+\theorembodyfont{\upshape}
+% \theoremsymbol{\ensuremath{\ast}}
+\newtheorem{bsp}{Beispiel}
+\theoremstyle{nonumberplain}
+\theoremheaderfont{\itshape}
+\theoremsymbol{\ensuremath{\square}}
+\theoremseparator{}
+\theorempostwork{\begin{center}
+ \includegraphics[width=.5\textwidth]{./Vintage-Decorative-Divider.pdf}
+ % Vintage-Decorative-Divider.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+\end{center}\bigskip}
+\newtheorem{bew}{\framebox{Beweis}}
+
+\usepackage{epigraph} % Quotation at the beginning of parts / chapters
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usepackage{graphicx} % Include figures
+
+% framing equations
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+\usepackage[framemethod=tikz]{mdframed} % frame defining
+\global\mdfdefinestyle{myboxstyle}{%
+shadow=true,
+linecolor=black,
+shadowcolor=black,
+shadowsize=6pt,
+nobreak=false,
+innertopmargin=10pt,
+innerbottommargin=10pt,
+leftmargin=5pt,
+rightmargin=5pt,
+needspace=1cm,
+skipabove=5pt,
+skipbelow=10pt,
+middlelinewidth=1pt,
+afterlastframe={\vspace{5pt}},
+aftersingleframe={\vspace{5pt}},
+tikzsetting={%
+draw=black,
+thick}
+}
+% breakable box
+\newmdenv[style=myboxstyle]{whitebox}
+% unbreakable box
+\newmdenv[style=myboxstyle,nobreak=true]{blockwhitebox}
+
+
+%%% PAGE LAYOUT 
+%%%------------------------------------------------------------------------------
+
+\setlrmarginsandblock{0.075\paperwidth}{*}{1} % Left and right margin
+\setulmarginsandblock{0.15\paperwidth}{*}{1}  % Upper and lower margin
+\checkandfixthelayout
+
+%%% SECTIONAL DIVISIONS
+%%%------------------------------------------------------------------------------
+
+\maxsecnumdepth{subsection} % Subsections (and higher) are numbered
+\setsecnumdepth{subsection}
+
+\makeatletter %
+\makechapterstyle{standard}{
+  \setlength{\beforechapskip}{0\baselineskip}
+  \setlength{\midchapskip}{1\baselineskip}
+  \setlength{\afterchapskip}{4\baselineskip}
+  \renewcommand{\chapterheadstart}{\vspace*{\beforechapskip}}
+  \renewcommand{\chapnamefont}{\normalfont\Large}
+  \renewcommand{\printchaptername}{\chapnamefont \@chapapp}
+  \renewcommand{\chapternamenum}{\space}
+  \renewcommand{\chapnumfont}{\normalfont\Large}
+  \renewcommand{\printchapternum}{\chapnumfont \thechapter}
+  \renewcommand{\afterchapternum}{\par\nobreak\vskip \midchapskip}
+  \renewcommand{\printchapternonum}{\vspace*{\midchapskip}\vspace*{5mm}}
+  \renewcommand{\chaptitlefont}{\bfseries\LARGE}
+  \renewcommand{\printchaptertitle}[1]{\chaptitlefont ##1}
+  \renewcommand{\afterchaptertitle}{\par\nobreak\vskip \afterchapskip}
+}
+\setlength{\epigraphwidth}{0.5\textwidth}
+\makeatother
+
+\chapterstyle{standard}
+
+\setsecheadstyle{\normalfont\large\bfseries}
+\setsubsecheadstyle{\normalfont\normalsize\bfseries}
+\setparaheadstyle{\normalfont\normalsize\bfseries}
+\setparaindent{0pt}\setafterparaskip{0pt}
+
+%%% FLOATS AND CAPTIONS
+%%%------------------------------------------------------------------------------
+
+\makeatletter                  % You do not need to write [htpb] all the time
+\renewcommand\fps@figure{htbp} %
+\renewcommand\fps@table{htbp}  %
+\makeatother                   %
+
+\captiondelim{\space } % A space between caption name and text
+\captionnamefont{\small\bfseries} % Font of the caption name
+\captiontitlefont{\small\normalfont} % Font of the caption text
+
+\changecaptionwidth          % Change the width of the caption
+\captionwidth{1\textwidth} %
+
+%%% ABSTRACT
+%%%------------------------------------------------------------------------------
+
+\renewcommand{\abstractnamefont}{\normalfont\small\bfseries} % Font of abstract title
+\setlength{\absleftindent}{0.1\textwidth} % Width of abstract
+\setlength{\absrightindent}{\absleftindent}
+
+%%% HEADER AND FOOTER 
+%%%------------------------------------------------------------------------------
+
+\makepagestyle{standard} % Make standard pagestyle
+
+\makeatletter                 % Define standard pagestyle
+\makeevenfoot{standard}{}{}{} %
+\makeoddfoot{standard}{}{}{}  %
+\makeevenhead{standard}{\small\rightmark}{}{\itshape\thepage}
+\makeoddhead{standard}{\small\rightmark}{}{\itshape\thepage}
+% \makeoddhead{standard}{}{}{\small\rightmark\qquad\bfseries\thepage}
+\makeheadrule{standard}{\textwidth}{\normalrulethickness}
+\makeatother                  %
+
+\makeatletter
+\makepsmarks{standard}{
+\createmark{chapter}{both}{shownumber}{\@chapapp\ }{ \quad }
+\createmark{section}{both}{shownumber}{}{ \quad }
+\createplainmark{toc}{both}{\contentsname}
+\createplainmark{lof}{both}{\listfigurename}
+\createplainmark{lot}{both}{\listtablename}
+\createplainmark{bib}{both}{\bibname}
+\createplainmark{index}{both}{\indexname}
+\createplainmark{glossary}{both}{\glossaryname}
+}
+\makeatother                               %
+
+\makepagestyle{chap} % Make new chapter pagestyle
+
+\makeatletter
+\makeevenfoot{chap}{}{\small\thepage}{} % Define new chapter pagestyle
+\makeoddfoot{chap}{}{\small\thepage}{}  %
+\makeevenhead{chap}{}{}{}   %
+\makeoddhead{chap}{}{}{}    %
+% \makeheadrule{chap}{\textwidth}{\normalrulethickness}
+\makeatother
+
+\nouppercaseheads
+\pagestyle{standard}               % Choosing pagestyle and chapter pagestyle
+\aliaspagestyle{chapter}{chap} %
+
+%%% NEW COMMANDS
+%%%------------------------------------------------------------------------------
+
+\newcommand{\p}{\partial} %Partial
+% Or what ever you want
+
+\def\fc{(0,0) circle (1.5cm)}
+\def\sc{(0:2cm) circle (1.5cm)}
+
+%%% TABLE OF CONTENTS
+%%%------------------------------------------------------------------------------
+
+\maxtocdepth{subsection} % Only parts, chapters and sections in the table of contents
+\settocdepth{subsection}
+
+\AtEndDocument{\addtocontents{toc}{\par}} % Add a \par to the end of the TOC
+
+%%% INTERNAL HYPERLINKS
+%%%-------------------------------------------------------------------------------
+
+\usepackage{hyperref}   % Internal hyperlinks
+\hypersetup{
+pdfborder={0 0 0},      % No borders around internal hyperlinks
+pdfauthor={Martin Putzlocher} % author
+}
+\usepackage{memhfixc}   %
+
+%%% THE DOCUMENT
+%%% Where all the important stuff is included!
+%%%-------------------------------------------------------------------------------
+
+\author{Martin Putzlocher}
+\title{Mathematik\\in der\\9.~Jahrgangsstufe\\~\\{\small Gymnasium Bayern}}
+
+% \usepackage{lipsum} % Just to put in some text
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+\newpage
+\null\vfill
+
+\begin{flushleft}
+\textcopyright COPYRIGHT INFO
+
+\textit{Mathematik in der 9.~Jahrgangsstufe}
+
+2017
+
+von Martin Putzlocher, Wiesau
+
+Studienrat am Stiftland-Gymnasium in Tirschenreuth, Bayern
+\bigskip
+
+ \includegraphics[height=2em]{./cc88x31.png}
+ 
+Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung - \textbf{Nicht-kommerziell} - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz.
+Die Nutzung an Privatschulen, kirchlichen Schulen oder Nachhilfeinstituten ist nicht gestattet.
+
+Der Urheber aller Abbildungen ist, wenn nicht anders vermerkt, der Autor.
+\end{flushleft}
+\clearpage
+
+
+% \begin{abstract}
+% \lipsum[1-2]
+% \end{abstract}
+% \clearpage
+
+\tableofcontents*
+\clearpage
+
+\chapter{Einleitung}
+Dieses elektronische Buch soll Schülerinnen und Schülern in der 9.~Jahrgangsstufe des Gymnasiums in Bayern oder Lernenden, die einem vergleichbaren Anforderungsniveau gegenüber stehen, helfen, sich im undurchschaubaren Dickicht mathematischer Ausdrücke zurechtzufinden.
+
+\mainmatter
+
+\input{m9grundwissen}
+\input{m9mathe9}
+
+\backmatter
+
+\chapter{Lösungen}
+\section*{Lösungen zu den Grundlegenden Rechengregeln}
+\label{sec:sol1}
+
+\begin{enumerate}
+ \item Faktorisiere!
+ \begin{enumerate}
+  \item \(12a+6b = 6(2a+b)\)
+  \item \(19c+11c = c(19+11)\)
+ \end{enumerate}
+
+\end{enumerate}
+
+\clearpage 
+\listoffigures
+
+\clearpage
+\def\tikzname{Ti\emph{k}Z} 
+\pagestyle{empty}
+\null\vfill
+
+\begin{adjustwidth}{0.4in}{0.4in}
+\begin{center}
+{\Large\textsf{Colophon}}
+\end{center}
+\small
+ \begin{center}
+Dieses Buch wurde mit dem Textsatzsystem \LaTeX{} von Leslie Lamport und der
+memoir Dokumentenklasse gesetzt.
+
+Die Abbildungen wurden mit \tikzname{}, \textsf{tkz-euclide} und PSTricks erstellt. Dreidimensionale Ansichten wurden mit \textsf{pst-solides3d} generiert.
+
+Der Haupttext ist in 11pt mit den Computer Modern Schriften von Donald Knuth gesetzt.
+Der Formelsatz nutzt die Palatino-Schrift, entworfen von Hermann Zapf.
+\end{center} 
+
+\end{adjustwidth}
+\vfill
+\hrule
+\vfil
+\begin{center}
+\textit{Martin Putzlocher --- \url{mp@mint-oer.de}}\\
+Wiesau, \today
+\end{center}
+
+%%% BIBLIOGRAPHY
+%%% -------------------------------------------------------------
+
+% \bibliographystyle{utphysics}
+% \bibliography{ref}
+
+\end{document}
+
+\endinput

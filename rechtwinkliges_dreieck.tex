@@ -1,0 +1,62 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+\begin{tikzpicture}
+\tkzInit[ymin=0,ymax=2,xmin=0,xmax=4]
+\tkzClip[space=.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(4,0){B}
+\tkzDrawTriangle[two angles=45 and 35](A,B) \tkzGetPoint{C}
+
+\tkzLabelPoint[left](A){$A$}
+\tkzLabelPoint[right](B){$B$}
+\tkzLabelPoint[above](C){$C$}
+% \tkzMarkRightAngle(A,C,B)
+% \tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+% size=1](B,A,C)
+% \tkzLabelAngle[pos=.75](B,A,C){\(\alpha\)}
+% \tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+% size=1](C,B,A)
+% \tkzLabelAngle[pos=.75](C,B,A){\(\beta\)}
+\tkzDrawSegment[blue](B,C)
+\tkzLabelSegment[above,sloped](B,C){Gegenkathete $a$}
+\tkzDrawSegment[green!50!black](A,C)
+\tkzLabelSegment[above,sloped](A,C){Ankathete $b$}
+\tkzDrawSegment[red](A,B)
+\tkzLabelSegment[below,sloped](A,B){Hypotenuse $c$}
+\end{tikzpicture}
+
+
+\end{document}
