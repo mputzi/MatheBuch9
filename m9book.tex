@@ -20,9 +20,11 @@ openany, % A chapter may start on either a recto or verso page.
 \usepackage[T1]{fontenc}    %
 \usepackage[ngerman]{babel} % English please
 \usepackage{eurosym}
-\usepackage[final]{microtype} % Less badboxes
+\usepackage[protrusion=true,final,babel=true,draft=false]{microtype} % Less badboxes
 
 \usepackage[pass,a6paper]{geometry}
+
+\usepackage{ccicons}
 
 % \usepackage{kpfonts} %Font
 \usepackage[euler-digits]{eulervm} % Math Font
@@ -83,6 +85,10 @@ openany, % A chapter may start on either a recto or verso page.
  % Vintage-Decorative-Divider.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
 \end{center}\bigskip}
 \newtheorem{bew}{\framebox{Beweis}}
+
+
+
+\usepackage{makeidx} % Indexing / Stichwortverzeichnis
 
 \usepackage{epigraph} % Quotation at the beginning of parts / chapters
 
@@ -252,13 +258,16 @@ pdfauthor={Martin Putzlocher} % author
 }
 \usepackage{memhfixc}   %
 
+\usepackage{fixltx2e}
+\MakeRobust{\overrightarrow}
+
 %%% THE DOCUMENT
 %%% Where all the important stuff is included!
 %%%-------------------------------------------------------------------------------
 
 \author{Martin Putzlocher}
 \title{Mathematik\\in der\\9.~Jahrgangsstufe\\~\\{\small Gymnasium Bayern}}
-
+\makeindex
 % \usepackage{lipsum} % Just to put in some text
 
 \begin{document}
@@ -274,14 +283,18 @@ pdfauthor={Martin Putzlocher} % author
 
 \textit{Mathematik in der 9.~Jahrgangsstufe}
 
-2017
+2018
 
 von Martin Putzlocher, Wiesau
 
 Studienrat am Stiftland-Gymnasium in Tirschenreuth, Bayern
 \bigskip
 
- \includegraphics[height=2em]{./cc88x31.png}
+%  \includegraphics[height=2em]{./cc88x31.png}
+\Large
+\ccbyncsaeu
+\normalsize
+ 
  
 Dieses Werk ist lizenziert unter einer Creative Commons Namensnennung - \textbf{Nicht-kommerziell} - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz.
 Die Nutzung an Privatschulen, kirchlichen Schulen oder Nachhilfeinstituten ist nicht gestattet.
@@ -326,6 +339,9 @@ Dieses elektronische Buch soll Schülerinnen und Schülern in der 9.~Jahrgangsst
 \listoffigures
 
 \clearpage
+\printindex
+
+\clearpage
 \def\tikzname{Ti\emph{k}Z} 
 \pagestyle{empty}
 \null\vfill
@@ -339,7 +355,7 @@ Dieses elektronische Buch soll Schülerinnen und Schülern in der 9.~Jahrgangsst
 Dieses Buch wurde mit dem Textsatzsystem \LaTeX{} von Leslie Lamport und der
 memoir Dokumentenklasse gesetzt.
 
-Die Abbildungen wurden mit \tikzname{}, \textsf{tkz-euclide} und PSTricks erstellt. Dreidimensionale Ansichten wurden mit \textsf{pst-solides3d} generiert.
+Die Abbildungen wurden mit \tikzname{}, \textsf{tkz-euclide} und PSTricks mit den Zusatzpaketen \textsf{pst-eucl} und \textsf{pst-geometrictools} erstellt. Dreidimensionale Ansichten wurden mit \textsf{pst-solides3d} generiert.
 
 Der Haupttext ist in 11pt mit den Computer Modern Schriften von Donald Knuth gesetzt.
 Der Formelsatz nutzt die Palatino-Schrift, entworfen von Hermann Zapf.

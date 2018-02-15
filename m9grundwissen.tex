@@ -1,0 +1,2236 @@
+
+\part{Grundwissen im Vorfeld der 9.~Jahrgangsstufe}
+
+
+\chapter{Algebra und Analysis bis zur 9.~Jahrgangsstufe}
+\label{ch:grundwissen}
+\epigraph{Die Neugier steht immer an erster Stelle eines Problems, das gelöst werden will.}{\textsc{Galileo Galiei}}
+
+
+Nachfolgend werden alle Rechenregeln und Definitionen algebraischer Strukturen wiedergegeben, die bis zum Beginn der 9.~Jahrgangsstufe am Gymnasium in Bayern erlernt werden sollen. Dabei wird darauf geachtet, dass die Notation mit dem heutigen Standard in der Mathematik übereinstimmt.
+
+\section{Zahlen}
+
+Folgende Zahlenmengen sollten zu Beginn der 9.~Jahrgangsstufe vertraut sein:
+\begin{itemize}
+ \item \(\mathbb{N}\), die \emph{natürlichen} Zahlen. Das sind die Zahlen, mit denen man abzählt.\\
+       \(\mathbb{N}=\lbrace 1;2;3;4;\ldots\rbrace\).
+       Jede natürliche Zahl \(n\) hat einen Nachfolger \(n+1\).\footnote{Axiom vom \emph{Nachfolger}}
+ \item \(\mathbb{N}_0\), die natürlichen Zahlen mit der Zahl \(0\).\\
+ Die grafische Darstellung entspricht den Zahlen am Zahlenstrahl, der mit der \(0\) beginnt
+ \item \(\mathbb{Z} = \mathbb{N}\cup \lbrace 0\rbrace \cup{}-\mathbb{N}\), die \emph{ganzen} Zahlen.\\
+ Die grafische Darstellung entspricht den Zahlen an der Zahlengeraden.
+ \item \(\mathbb{Q}\), die \emph{rationalen Zahlen}. Das sind alle Zahlen, die man als Bruch schreiben kann.\\
+       \(\mathbb{Q} = \left\lbrace \frac{p}{q} \mid p\in\mathbb{Z}\;\text{und}\; q\in\mathbb{N}\right\rbrace\)\\
+ Die grafische Darstellung der rationalen Zahlen entspricht der Zahlengeraden.
+\end{itemize}
+
+\begin{defi}[Teilbarkeit]
+ Eine ganze Zahl \(a\) ist durch eine ganze Zahl \(b\) (ohne Rest) \emph{teilbar}, wenn \(a\) ein Vielfaches von \(b\) ist.\index{teilbar} Man sagt dann auch, "`\(b\) teilt \(a\)"' oder in Symbolen:
+ \begin{equation*}
+  b\mid a \Leftrightarrow a = k\cdot b\;\text{mit}\;k\in\mathbb{Z}
+ \end{equation*}
+\end{defi}
+
+\begin{bsp}[Teilbarkeit]
+ 124 ist durch 4 teilbar oder in Zeichen \\\(4 \mid 124\), da \(124 = 31 \cdot 4\).
+\end{bsp}
+
+
+\begin{defi}[teilerfremd]
+ Zwei ganze Zahlen \(a\) und \(b\) nennt man \emph{teilerfremd}, wenn es außer der Zahl \(1\) keine andere Zahl gibt, durch die beide teilbar sind.\index{teilerfremd}
+\end{defi}
+
+\begin{bsp}[teilerfremd]
+ 23 und 24 sind teilerfremd, da sie außer 1 keine gemeinsamen Teiler besitzen.
+ 
+ 123 und 39 sind nicht teilerfremd, da beide Zahlen durch 3 teilbar sind.
+\end{bsp}
+
+\begin{defi}[Primzahl]
+Primzahlen sind die natürlichen Zahlen, die nur durch 1 und sich selbst teilbar sind.\index{Primzahl}
+\end{defi}
+\begin{folg}
+Jede natürliche Zahl lässt sich als Produkt von Primzahlen schreiben. Dieses Produkt nennt man die \emph{Primfaktorzerlegung} dieser Zahl.\index{Primfaktorzerlegung}
+\end{folg}
+\begin{bsp}
+ \begin{equation*}
+  312 = 3\cdot 104 = 3\cdot 2 \cdot 52 = 3\cdot 2 \cdot 2 \cdot 26 = 3\cdot 2\cdot 2 \cdot 2 \cdot 13
+ \end{equation*} 
+\end{bsp}
+
+\begin{defi}[Primfaktoren]
+ Jede natürliche Zahl, die größer als 1 und selbst keine Primzahl ist, lässt sich als Produkt von mindestens zwei Primzahlen schreiben, die dann als \emph{Primfaktoren} bezeichnet werden.\index{Primfaktor}
+ \begin{equation*}
+  n = p_1 \cdot p_2 \cdot p_3 \cdots
+ \end{equation*}
+ Der Prozess zur Bestimmung dieser Primzahlen nennt man die \emph{Primfaktorzerlegung}. Die leichteste Methode hierfür ist die Probedivision. Dabei prüft man, ausgehend von der \(2\), der Reihe nach, welche Primzahl die zu zerlegende Zahl ohne Rest teilt. Hat man einen solchen Teiler gefunden, führt man die Division aus und wiederholt das Verfahren am Ergebnis der Division. Prüft man hierbei einen möglichen Teiler, der bereits größer als die Quadratwurzel\footnote{siehe Stoff der 9.~Jahrgangsstufe} der zu untersuchenden Zahl ist, kann man das Verfahren abbrechen: Die Zahl ist dann selbst eine Primzahl.
+\end{defi}
+
+\begin{bsp}
+ Primfaktorzerlegung der Zahl 315
+ \begin{align*}
+  2 &\nmid 315 \\
+  3 &\mid 315  & 315 \div 3 &= 105\\
+  3 &\mid 105  & 105 \div 3 &= 35\\
+  3 &\nmid 35  \\
+  5 &\mid 35 &  35 \div 5 &= 7 \\
+  7 &\;\text{ist prim}\\ \hline
+  315 &= 3\cdot 3 \cdot 5 \cdot 7
+ \end{align*}
+
+\end{bsp}
+
+\section{Größen}
+\label{sec:groessen}
+\begin{defi}[Größe]
+ Eine \emph{Größe} ist ein Ergebnis einer Messung anhand einer Skala mit vorher festgelegter Einheit.\index{Größe} Die Angabe einer Größe besteht immer aus der Angabe des Zahlenwerts \emph{und} der Einheit. Der Wert gibt an, wie oft die Einheit in den Messwert hineinpasst.\index{Einheit}
+ \begin{equation*}
+  \text{Größe} = \text{Wert} \cdot \text{Einheit}
+ \end{equation*}
+ In allen Wissenschaften werden Größen mit \emph{Größensymbolen} abgekürzt, die wie Variablen behandelt werden können.
+ 
+ Achte darauf, Größensymbole und Einheiten nicht zu verwechseln!
+\end{defi}
+
+\begin{bsp}[Größen]
+ Angaben von Größen sind:
+ \begin{align*}
+  l &= 3\,\text{m}&&\text{Länge}\\
+  \vartheta &= 21\,\degree\text{C}&&\text{Temperatur}\\
+  I &= 2.4\,\text{A}&&\text{Stromstärke}\\
+  U&= 5\,\text{V}&&\text{elektrische Spannung}\\
+  m &= 79\,\text{kg}&&\text{Masse}
+ \end{align*}
+ Stets lässt sich anhand der Einheit ablesen, um welche Art von Größe\footnote{Statt \emph{Art einer Größe} spricht man auch von ihrer \emph{Dimension}.} es sich handelt.
+\end{bsp}
+
+\begin{beme}[Messen]
+ Der Vorgang des Messens einer Größe besteht darin, die Eigenschaft eines Untersuchungsgegenstands mittels eines geeigneten Messinstruments mit der Einheit einer Skala zu vergleichen. Messungen an realen Gegenständen sind \emph{immer} mit einer Ungenauigkeit -- dem \emph{Fehler} der Messung\index{Messfehler} -- behaftet. \emph{Fehler} bedeutet hier nicht unbedingt, dass bei der Messung etwas "`systematisch"' falsch gemacht wurde.
+\end{beme}
+
+\section{Grundrechenarten und Schreibweisen}
+
+\begin{defi}[Term]
+ Jede Rechnung und jeder Teil einer Rechnung wird mit dem Sammelbegriff \emph{Term} (\(\hat{=}\)(Rechen-)Ausdruck) bezeichnet.\index{Term}
+\end{defi}
+
+\begin{defi}[Addition]
+ Fügt man eine Zahl zu einer anderen hinzu, so spricht man von einer \emph{Addition}\index{Addition}. Der Term wird als \emph{Summe}\index{Summe} bezeichnet. Das Rechenzeichen ist das Plus. Die erste Zahl nennt man den \emph{1.~Summanden}, die zweite den \emph{2.~Summanden}.
+\end{defi}
+\begin{defi}[Subtraktion]
+ Zieht man von einer Zahl eine andere ab, so spricht man von einer \emph{Subtraktion}\index{Subtraktion}. Der Term wird als \emph{Differenz}\index{Differenz} bezeichnet. Das Rechenzeichen ist das Minus. Die erste Zahl nennt man den \emph{Minuenden}\index{Minuend}, die zweite den \emph{Subtrahenden}\index{Subtrahend}.
+\end{defi}
+\begin{defi}[Multiplikation]
+ Vervielfacht man eine Zahl auf das \(n\)-fache, so spricht man von einer \emph{Multiplikation}\index{Multiplikation}. Der Term wird als \emph{Produkt}\index{Produkt} bezeichnet. Das Rechenzeichen ist der Malpunkt.\footnote{im Englischen Sprachraum wird hier das Symbol \(\times\) benutzt.} Die erste Zahl nennt man den \emph{1.~Faktor}, die zweite Zahl~\(n\) den \emph{2.~Faktor}.\index{Faktor}
+\end{defi}
+\begin{defi}[Division]
+ Teilt man eine Zahl auf \(m\) gleiche Teile auf, so spricht man von einer \emph{Division}\index{Division}. Der Term wird als \emph{Quotient}\index{Quotient} bezeichnet. Das Rechenzeichen ist das Divisionszeichen.\footnote{Im deutschen Schulsystem findet man \(a:b\), während International eher \(a\div b\) zur Anwendung kommt.} Die erste Zahl nennt man den \emph{Dividenden}\index{Dividend}, die zweite Zahl~\(m\) den \emph{Divisor}\index{Divisor}.
+\end{defi}
+
+\begin{regel}[Schreibweise Produkt]
+Wird das Rechenzeichen weggelassen, so ist fast immer ein Produkt gemeint.
+\[ab = a\cdot b\]
+
+Die einzige Ausnahme bilden gemischte Brüche:
+\begin{align*}a\frac{b}{c} &= a+\frac{b}{c} = \frac{ac+b}{c}\\
+   a\frac{b}{c} &\ne \frac{ab}{c} = \frac{a\cdot b}{c} = a\cdot \frac{b}{c}
+\end{align*}
+\end{regel}
+
+\begin{regel}[Addition negativer Zahlen]
+Die Addition einer negativen Zahl entspricht der Subtraktion ihres Betrags.
+\begin{align*}
+ a+(-b) &= a-b
+\end{align*}
+
+Die Subtraktion einer negativen Zahl entspricht der Addition ihres Betrags.
+\begin{align*}
+ a-(-b) &= a+b
+\end{align*}
+\end{regel}
+
+\begin{defi}[Umkehraufgabe]
+ Mit der \emph{Umkehraufgabe} ist die Umstellung einer Rechnung gemeint, um den ersten Teil des Terms zu bestimmen. Dazu wird die Reihenfolge der Zahlen umgekehrt und die gegenteilige Rechenart ausgeführt. (\(+\leftrightarrow -\) bzw. \(\cdot \leftrightarrow \div\)).
+\end{defi}
+
+
+\section{Grundlegende Rechenregeln}
+\label{sec:basicrules}
+
+\subsection*{Vorrangregeln}
+
+\begin{regel}
+ Kommt in einer Rechnung nur eine Rechenart vor, so arbeitet man die Rechnung, so wie man sie liest, also \emph{von links nach rechts}, ab.
+\end{regel}
+
+\begin{bsp}
+
+\begin{align*}
+ 3+45-23+12 &=3+45+(-23)+12 \\
+  &= 48 + (-23) + 12 \\
+  &= 25+12 \\
+  &= 37
+\end{align*}
+
+ \begin{center}
+ \small
+   \begin{tikzpicture}[x=1cm,y=1cm]
+\node[circle](a) at (0,0) {$3$};
+\node[circle](b) at (2,0) {$45$};
+\node[draw=black](p1) at (1,0) {$+$};
+\node[circle](c) at (1,-1) {$48$};
+
+\node[circle](d) at (3,-1) {$-23$};
+\node[draw=black](p2) at (2,-1) {$+$};
+\node[circle](e) at (2,-2) {$25$};
+
+\node[circle](f) at (4,-2) {$12$};
+\node[draw=black](p3) at (3,-2) {$+$};
+\node[circle](g) at (3,-3) {$37$};
+
+\draw (a)--(p1);
+\draw (p1)--(b);
+\draw (p1)->(c);
+\draw (c)--(p2);
+\draw (p2)--(d);
+\draw (p2)->(e);
+\draw (e)--(p3);
+\draw (p3)--(f);
+\draw (p3)->(g);
+
+\end{tikzpicture}
+\normalsize
+ \end{center}
+
+\end{bsp}
+
+\begin{regel}[KlaPPS]
+ Die Abkürzung steht für:
+ \begin{whitebox}
+  \textbf{Kla}mmern vor \textbf{P}otenz vor \textbf{P}unkt vor \textbf{S}trich\index{KlaPPS}
+ \end{whitebox}
+ Bei jedem Rechenausdruck werden also zuerst die Klammern ausgewertet, dann die Potenzen, dann die Punkt-Rechenarten (Multiplikation und Division) und am Schluss die Strich-Rechenarten (Addition und Subtraktion).
+ 
+ Dabei ist zu beachten, dass es Fälle gibt, in denen die Klammern weggelassen werden können. Diese sind:
+ \begin{itemize}
+  \item Rechnungen auf einem Bruchstrich gelten immer als eingeklammert.
+  \[\frac{3+5}{2} = \frac{(3+5)}{2} = \frac{8}{2} = 4\]
+  \item Der Exponent einer Potenz gilt als eingeklammert.
+  \[2^{5-3} = 2^{(5-3)} = 2^2 = 4\]
+ \end{itemize}
+\end{regel}
+ 
+ \begin{regel}[Punkt vor Strich]
+ Sind in einer Rechnung keine Potenzen und Klammern vorhanden, so vereinfacht sich die KlaPPS-Regel zu\ldots
+ \begin{whitebox}
+ \begin{center}
+  Punkt vor Strich\index{Punkt vor Strich}
+  \end{center}
+ \end{whitebox}
+ Das bedeutet, dass Multiplikation und Division immer Vorrang vor Addition und Subtraktion haben.
+
+\end{regel}
+
+\begin{bsp}
+ Die folgende Rechnung beinhaltet alle Rechenarten der KlaPPS-Regel.
+ \begin{align*}
+  3+7\cdot 2^{3\cdot 2 - 4} &= 3+7\cdot 2^{(3\cdot 2 -4)}\\
+                            &= 3+7\cdot 2^{(6-4)}\\
+                            &= 3+7\cdot 2^{2} \\
+                            &= 3+7\cdot 4 \\
+                            &= 3+28 = 31\\
+ \end{align*}
+ Hier steht eine Summe, ein Produkt und eine Potenz. Also hat die Potenz Vorrang. Der Exponent der Potenz gilt als eine Klammer. Daher wird dieser zuerst ausgewertet. Innerhalb dieser Klammer hat das Produkt Vorrang vor der Differenz. Die erste Rechnung, die ausgeführt wird, ist also \(3\cdot 2\). Die Rechenoperation, die hier zuletzt ausgeführt wird ist die Summe. 
+\end{bsp}
+
+\begin{regel}[Benennung von Termen]
+ Die Art eines Terms wird durch die zuletzt auszuführende Rechenoperation bestimmt.
+\end{regel}
+
+\begin{bsp}[Benennung von Termen]
+\begin{align*}
+ 2+3\cdot 4 &&& \text{Summe} \\
+ (2+3)\cdot 7 &&& \text{Produkt} \\
+ 2^{4-3} &&& \text{Potenz} \\
+ 2\cdot 8 \div 12 &&& \text{Quotient} \\
+ 3+4-(5+3) &&& \text{Differenz}
+\end{align*}
+\end{bsp}
+
+
+\subsection*{Assoziativgesetz}
+\label{ssec:ass} 
+
+\emph{Assoziieren} bedeutet \emph{in Verbindung setzen}. Bei diesem Rechengesetz geht es um die Beliebigkeit der Auswertungsreihenfolge bei bestimmten Termen.
+
+\begin{center}
+%  \includegraphics[height=2em]{./assG.png}
+ % assG.png: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \begin{tikzpicture}[x=1cm,y=1cm]
+\node[circle, thick, draw=black](a) at (0,0) {$a$};
+\node[circle, thick, draw=black](b) at (1,0) {$b$};
+\node[circle, thick, draw=black](c) at (2,-1) {$c$};
+
+\draw (a)--node[](ab){} (b);
+\draw (ab) |- (c);
+
+\draw[dashed] (3,-1) -- (3,0);
+
+\node[circle, thick, draw=black](a2) at (4,-1) {$a$};
+\node[circle, thick, draw=black](b2) at (5,0) {$b$};
+\node[circle, thick, draw=black](c2) at (6,0) {$c$};
+
+\draw (b2)--node[](bc){} (c2);
+\draw (a2) -|(bc);
+\end{tikzpicture}
+\end{center}
+
+Innerhalb von Additionen und Multiplikationen ist es erlaubt, die Reihenfolge der Auswertung beliebig zu wählen. In einem Term der gleichen Rechenart können zwei Summanden oder Faktoren beliebig miteinander verbunden werden.\index{Assoziativgesetz} 
+
+\begin{regel}
+ Innerhalb einer Summe aus drei oder mehr Summanden dürfen Klammern beliebig gesetzt und damit die Auswertungsreihenfolge beliebig gewählt werden.
+ \[ a+b+c = (a+b)+c = a+(b+c) \]
+\end{regel}
+\begin{regel}
+ Innerhalb eines Produkts aus drei oder mehr Faktoren dürfen Klammern beliebig gesetzt und damit die Auswertungsreihenfolge beliebig gewählt werden.
+\[ a\cdot b\cdot c = (a\cdot b) \cdot c = a\cdot (b\cdot c)\]
+\end{regel}
+
+Achtung! Bei Subtraktionen und Divisionen gilt das Assoziativgesetz \emph{nicht}.
+\begin{align*}
+ a-b-c &\ne a-(b-c)\\
+ a\div b \div c &\ne a\div (b \div c)
+\end{align*}
+
+Das Assoziativgesetz erlaubt es beim Kopfrechnen Rechenvorteile dadurch zu erreichen, dass man eine andere Reihenfolge wählt.
+
+\begin{bsp}[Rechenvorteil durch Reihenfolge]
+ \[116 + 47 + 453  = 116 + (47+453) = 116 + 500 = 616\] 
+\end{bsp}
+
+
+\subsection*{Kommutativgesetz}
+\label{ssec:komm}
+
+Das Lateinische Wort \emph{commutare} bedeutet \emph{vertauschen.}
+
+\begin{center}
+ \begin{tikzpicture}[x=1cm,y=1cm]
+\node[circle, thick, draw=black, minimum size=2em](a) at (0,0) {$a$};
+\node[circle, thick, draw=black, minimum size=2em](b) at (1.5,0) {$b$};
+\draw[->] (a)--node[](ab){} (b);
+\node[] at (0.75,-1) {erst $a$, dann $b$};
+\draw[dashed] (2.5,-0.5) -- (2.5,0.5);
+\node[circle, thick, draw=black, minimum size=2em](b2) at (3.5,0) {$b$};
+\node[circle, thick, draw=black, minimum size=2em](a2) at (5,0) {$a$};
+\draw[<-] (a2)--node[](ab){} (b2);
+\node[] at (4.25,-1) {erst $b$, dann $a$};
+\end{tikzpicture}
+\end{center}
+
+In Additionen und Multiplikationen ist es erlaubt, die Reihenfolge der Terme zu verändern bzw. Terme zu vertauschen (zu \emph{kommutieren}).\index{Kommutativgesetz}
+
+\begin{regel}
+ Innerhalb einer Summe dürfen die Summanden vertauscht werden.
+ \[a+b = b+a\]
+\end{regel}
+
+\begin{regel}
+ Innerhalb eines Produkts dürfen die Faktoren vertauscht werden.
+ \[a\cdot b = b \cdot a\]
+\end{regel}
+
+Achtung! Bei Differenzen und Quotienten gilt das Kommutativgesetz \emph{nicht}!
+\begin{align*}
+ a-b &\ne b-a\\
+ a\div b &\ne b\div a
+\end{align*}
+Aber eine Differenz kann als Summe mit einer negativen Zahl geschrieben werden, dann ist das Kommutativgesetz wieder anwendbar:
+\begin{align*}
+ a-b &= a+(-b) \stackrel{\text{KG}}{=} (-b)+a
+\end{align*}
+Ein Quotient kann als Produkt mit dem Kehrwert des Divisors geschrieben werden, dann ist das Kommutativgesetz wieder anwendbar:
+\begin{align*}
+ a\div b &= a\cdot \frac{1}{b} \stackrel{\text{KG}}{=} \frac{1}{b}\cdot a
+\end{align*}
+
+
+\subsection*{Gleichnamige Terme}
+Zwei Pruduktterme sind \emph{gleichnamig}, wenn sie die gleichen Variablen in der gleichen Häufigkeit enthalten.\index{gleichnamig}
+
+So sind zum Beispiel die Terme \(2x\) und \(-12x\) gleichnamig; \(0.1xy^2\) und \(0.25xy\) hingegen nicht, da \(xy^2\) das \(y\) zweimal als Faktor enthält.
+
+\begin{regel}
+ Summen aus gleichnamigen Produkttermen lassen sich zu einem Term zusammenfassen.
+ Potenzen gelten nur dann gleichnamig, wenn die Basis und die Exponenten übereinstimmen.
+ \end{regel}
+
+\begin{bsp}
+ \begin{align*}
+  2+4x-7+12x-3y &= 16x-3y-5 \\
+  x^2-2x+4x^2 &= 5x^2 -2x \\
+  x^3 - y^2 + xy -2x^3 +2y^2 &= -x^3+y^2 +xy 
+ \end{align*}
+
+\end{bsp}
+
+
+\subsection*{Distributivgesetz}
+\label{ssec:dis}
+
+Das lateinische \emph{distribuere} bedeutet \emph{verteilen}.
+
+\begin{center}
+ \begin{tikzpicture}[x=1cm,y=1cm]
+\node[circle, thick, draw=black, minimum size=2em](a) at (0,1) {$a$};
+
+\node[circle, thick, draw=black, minimum size=2em](b) at (1,0) {$b$};
+\node[circle, thick, draw=black, minimum size=2em](c) at (2,0) {$c$};
+\draw[red] (b)--(c);
+\node[rectangle, draw=red, double, fit=(b)(c)](bc) {};
+
+\draw[->] (a)--(bc);
+
+\draw[dashed] (3,-0.5) -- (3,1.5);
+
+\node[circle, thick, draw=black, minimum size=2em](a2) at (5,1) {$a$};
+\node[circle, thick, draw=black, minimum size=2em](b2) at (4,0) {$b$};
+\node[circle, thick, draw=black, minimum size=2em](c2) at (6,0) {$c$};
+\node[rectangle, draw=red, dashed, fit=(a2)(b2)(c2)](bc2) {};
+\draw[->] (a2)--node[near end](a2b2){} (b2);
+\draw[->] (a2)--node[near end](a2c2){}(c2);
+\draw[red] (a2b2) -- (a2c2);
+\end{tikzpicture}
+\end{center}
+
+Treten Multiplikation und Addition in einem Term auf, so gilt das \emph{Verteilungsgesetz}.\index{Distributivgesetz}
+
+\begin{regel}
+ Besteht in einem Produkt ein Faktor aus einer Summe, so ist der Term identisch zur Summe von Produkten.
+ \[a\cdot (b+c) = ab+ac\]
+\end{regel}
+
+\begin{regel}
+Durch die Anwendung des Distributivgesetzes lässt sich also ein Produkt in eine Summe verwandeln. Dann spricht man vom \emph{Ausmultiplizieren}.
+
+Aber auch umgekehrt lässt sich so eine Summe in ein Produkt verwandeln, wenn alle Summanden einen gemeinsamen Faktor besitzen.
+\[ 4a+4b = 4\cdot (a+b)\]
+
+Dann spricht man vom \emph{Ausklammern} oder \emph{Faktorisieren}.\index{Ausklammern}\index{Faktorisieren|see {Ausklammern}}
+
+\begin{whitebox}Die beiden Richtungen des Distributivgesetzes\begin{eqnarray*}
+ &\rightarrow & \text{ausmultiplizieren} \\
+ a\cdot (b+c)&=& a\cdot b + a\cdot c \\
+ \text{ausklammern} &\leftarrow&
+\end{eqnarray*}
+\end{whitebox}
+
+\end{regel}
+
+
+\begin{regel}[Verteilung des Divisors]
+ Ist eine Summe der Dividend eines Quotienten, so kann auch hier der Divisor auf die Summanden verteilt werden.
+ \[(a+b)\div c = a\div c + b \div c\]
+\end{regel}
+
+\begin{bsp}
+ \begin{align*}
+  \underbrace{(48+96)}_{144} \div 12 &= 48\div 12 + 96\div 12 \\
+                 &= 4 + 8 = 12
+ \end{align*}
+
+\end{bsp}
+
+\begin{regel}[Die Minusklammer]
+
+\end{regel}
+
+
+
+\subsection*{Aufgaben}
+
+\nameref{sec:sol1}
+\begin{enumerate}
+ \item Faktorisiere!
+ \begin{enumerate}
+  \item \(12a+6b\) 
+  \item \(19c+11c\)
+ \end{enumerate}
+
+\end{enumerate}
+
+\section{Relative Anteile}
+
+\begin{defi}[Anteil, Bruchteil, Verhältnis]\label{D:Anteil}
+ Die drei Begriffe \emph{Anteil}\index{Anteil}, \emph{Bruchteil}\index{Bruchteil} und \emph{Verhältnis}\index{Verhältnis} an bzw. zwischen zwei Größen werden häufig synonym als Bezeichnungen für den Quotienten der beiden Größen verwendet. Dabei sind die Größen, die ins Verhältnis gesetzt werden, stets von der gleichen Art. Sie sind also in der gleichen Einheit angebbar. Rechnet man die Größen in eine gemeinsame Einheit um, so kann man diese kürzen und übrig bleibt ein Wert ohne Einheit, die angibt, wie groß der Anteil der einen an der anderen Größe, dem \emph{Grundwert}\index{Grundwert}, ist.
+ 
+ Genau genommen sind die Begriffe \emph{Anteil} und \emph{Bruchteil} aber nicht gleichbedeutend:
+ \begin{itemize}
+  \item Der \emph{Anteil} steht tatsächlich für einen Bruch wie \(\nicefrac{1}{9}\).
+  \item Der \emph{Bruchteil} wären hingegen die 4 von 36~Personen.
+ \end{itemize}
+
+\end{defi}
+
+\begin{bsp}[Anteil]
+ Sieben von 28 Schülerinnen und Schülern der Klasse 8c sind Brillenträger. Der Anteil der Brillenträger beträgt also:
+ \begin{equation*}
+  \frac{7}{28} = \frac{1}{4} = 0.25 = 25\,\%
+ \end{equation*}
+\end{bsp}
+
+\begin{beme}[Prozentangaben]
+ Eine Angabe in Prozent ist \emph{keine} Größe; das Prozentzeichen ist \emph{keine} Einheit. Das Prozentzeichen steht einfach nur für ein Hundertstel.\index{Prozent}
+ \begin{equation*}
+  1\,\% = \nicefrac{1}{100} = \frac{1}{100} = 0.01
+ \end{equation*}
+ 
+ Der prozentuale Anteil oder \emph{Prozentsatz}~\(p\) ist der Quotient aus \emph{Prozentwert}~\(P\) und \emph{Grundwert}~\(G\).
+ \begin{equation*}
+  p = \frac{P}{G}
+ \end{equation*}
+
+\end{beme}
+
+\begin{bsp}[Prozentangabe]
+Im Jahr 2016 verdienten Frauen im Schnitt \(21\,\%\) weniger als Männer. Der Bruttostundenverdienst von Männern lag bei \(20.71\,\geneuro\).
+ 
+ Der Unterschied im Bruttoverdienst pro Stunde beträgt also \(21\,\%\) von \(20.71\,\geneuro\).
+ \begin{equation*}
+  P = p \cdot G = 21\,\% \cdot 20.71\,\geneuro = 0.21\cdot 20.71\,\geneuro \approx 4.35\,\geneuro 
+ \end{equation*}
+ Im Durchschnitt verdienten also Frauen \(4.35\,\geneuro\) weniger pro Stunde.
+\end{bsp}
+
+\begin{defi}[Prozentpunkte]
+ Bei Änderungen des Prozentsatzes wird häufig nur auf die Änderung der Prozentzahl Bezug genommen. Die Änderung dieses Zahlenwerts wird in \emph{Prozentpunkten} angegeben.
+ 
+ Verringert sich das Wahlergebnis einer Partei von \(22\,\%\) auf \(17\,\%\), so hat sich das Wahlergebnis um \(5\)~Prozentpunkte verschlechtert.
+\end{defi}
+
+
+\begin{regel}[Prozentualer Zuwachs]
+ Nimmt eine Größe um einen Prozentsatz~\(p\) zu, so kommt dieser zu den \(100\,\%\) des Grundwerts hinzu. Der Prozentwert wird also zum Grundwert addiert.\index{Zuwachs!prozentualer}
+ \begin{equation*}
+  G' = G + P = G + p\cdot G = G\cdot (1+p)
+ \end{equation*}
+ Zinsen auf ein Guthaben sind eine Anwendung des prozentualen Zuwachses. Der Zinssatz ist dabei gleichbedeutend mit dem Prozentsatz~\(p\).
+ \end{regel}
+ 
+Häufig ist es in Anwendungen so, dass der Wert nach dem prozentualen Zuwachs als neuer Grundwert erneut Zuwachs erhält. (Zinseszins-Effekt)
+
+\begin{bsp}[Zinseszins]
+ Hans legt bei der Reibeisenbank \(1000\,\geneuro\) zu \(2\,\%\) Zinsen p.a.\footnote{p.a. steht für lateinisch \emph{per annum}, also \emph{pro Jahr}.} an. Auf welchen Betrag ist seine Anlage nach vier Jahren angewachsen?\index{Zinseszins}
+ 
+ Das Kapital am Anfang wird als \(K_0\) bezeichnet; das Kapital nach dem ersten Jahr mit \(K_1\) und so weiter.
+ \begin{align*}
+  K_0 &= 1000\,\geneuro\\
+  K_1 &= 1000\,\geneuro \cdot (1+2\,\%) = K_0 \cdot 1.02\\
+  K_2 &= K_1 \cdot (1+2\,\%) = K_1 \cdot 1.02 = K_0\cdot 1.02^2\\
+  K_3 &= K_2\cdot  (1+2\,\%) = K_2 \cdot 1.02 = K_0 \cdot 1.02^3\\
+  K_4 &= K_0\cdot 1.02^4 = 1000\,\geneuro \cdot 1.02^4 \approx 1082.43\,\geneuro
+ \end{align*}
+ Hans hat nach vier Jahren \(1083.43\,\geneuro\) auf dem Konto.
+\end{bsp}
+
+\begin{regel}[Prozentuale Abnahme]
+  Nimmt eine Größe um einen Prozentsatz~\(p\) ab, so muss dieser von den \(100\,\%\) des Grundwerts subtrahiert werden. Der Prozentwert wird also vom Grundwert subtrahiert.
+  \begin{equation*}
+  G' = G - P = G - p\cdot G = G\cdot (1-p)
+ \end{equation*}
+ Die relative Änderung des Grundwerts beträgt dann also \((1-p)\).
+\end{regel}
+
+\begin{bsp}[Prozentuale Abnahme]
+ Im Jahr 2015 starben in Deutschland bei Unfällen im Straßenverkehr 3459~Personen. Gegenüber dem Vorjahr sank im Jahr 2016 dieser Wert um \(7.1\,\%\). Wie viele Personen kamen 2016 bei Unfällen im Straßenverkehr ums Leben?
+ \begin{equation*}
+  3459 \cdot (1-7.1\,\%) = 3459 \cdot 0.929 \approx 3214
+ \end{equation*}
+ 3214 Personen starben 2016 bei Verkehrsunfällen.
+\end{bsp}
+
+\section{Grundlagen der Mengenlehre}
+
+\begin{defi}[Menge]
+ Eine Menge ist eine Zusammenfassung von verschiedenen Objekten, die durch endlich viele Worte beschrieben werden kann.\index{Menge}
+
+Beispiele für Mengen sind die Menge aller roten Automobile, die Menge der Brillenträger einer Schulklasse, die Menge aller scharfen Gewürze in einem Gewürzregal oder auch die Menge aller ganzen Zahlen.
+
+Eine gute Vorstellung von einer Menge ist eine durchsichtige Plastiktüte. Die Menge wird nicht durch das Aussehen der Tüte bestimmt, sondern ausschließlich durch ihren Inhalt.
+
+Diese "`Plastiktüte"' wird mit geschweiften Klammern\footnote{engl.: \emph{curly brackets} oder \emph{braces}} symbolisiert.
+\end{defi}
+
+\begin{defi}[Element]
+ Die Objekte, die sich in einer Menge befinden, nennt man auch die Elemente der Menge oder ihre Mitglieder.\index{Element}
+ \begin{figure}
+ \begin{center}
+  \begin{tikzpicture}[scale=0.5]
+   \draw[thick, rounded corners] (-5,-4) rectangle (5,4);
+   \draw (0,3.3) node[] {Das Universum};
+   \fill[blue, fill opacity=0.5] (0,0) circle (2cm);
+   \draw[align=center,blue] (0,0) node {Planet Erde};
+   \fill[red] (-1,-1) circle (1pt);
+   \draw[red, -latex] (-4,-3) node[fill=white]{ich} -- (-1,-1);
+  \end{tikzpicture}
+  \begin{equation*}
+   \text{ich} \in \text{Planet Erde}
+  \end{equation*}
+ \end{center} 
+  \caption{Element in einer Menge}
+ \end{figure}
+ 
+ Ist ein Element \(a\) Mitglied in einer Menge \(A\), so sagt man auch "`\(a\) liegt in \(A\)"' und schreibt: 
+ \begin{equation*}
+  a \in A
+ \end{equation*}
+ Anders herum kann man auch sagen "`\(A\) enthält \(a\)"' und schreibt: 
+ \begin{equation*}
+  A \ni a
+ \end{equation*}
+ 
+ Ist ein Element \(b\) \emph{nicht} in der Menge \(A\) enthalten, so gibt es zwei Möglichkeiten dies auszudrücken. Entweder man sagt: "`Es gilt nicht, dass \(b\) in \(A\) enthalten ist."' \(\lnot(b\in A)\) oder man formuliert "`\(b\) ist \emph{kein} Mitglied in \(A\)"':
+ \begin{equation*}
+  b \not\in A
+ \end{equation*}
+\end{defi}
+
+\begin{bsp}[Mitgliedschaft]
+ Eine Gruppe von Personen besteht aus Anna, Berta und Clara. Sie bilden eine Menge \(M\).
+ \begin{equation*}
+  M = \lbrace \text{Anna}, \text{Berta}, \text{Clara}\rbrace
+ \end{equation*}
+ Dann gilt:
+ \begin{align*}
+  \text{Anna} &\in M & \text{Erik} &\not\in M
+ \end{align*}
+\end{bsp}
+
+\begin{beme}[Unterschied Menge - Element]
+ Zu beachten ist, dass das Objekt \(x\) und die Menge mit nur einem Element \(\lbrace x\rbrace \) nicht gleichbedeutend sind.
+ 
+ Die Menge \(\lbrace x\rbrace\) bildet sich aufgrund einer Einschränkung der Eigenschaften seiner Elemente auf bestimmte Ausprägungen. \(\lbrace x\rbrace\) bedeutet also auch, dass alle Elemente mit insoweit gleichen Eigenschaften wie der \emph{Repräsentant} \(x\) enthalten sind.
+\end{beme}
+
+\begin{beme}[Unterscheidbarkeit]
+ Es ist nicht möglich, dass ein Element mehrfach in einer Menge enthalten ist. Die Elemente einer Menge müssen immer unterscheidbar sein. Ein mehrfaches Auftreten des gleichen Elements wird ignoriert. Daher gilt zum Beispiel:
+ \begin{equation*}
+  \lbrace 1;2;3;3;3;3;4\rbrace  = \lbrace 1;2;3;4\rbrace
+ \end{equation*}
+\end{beme}
+
+\begin{beme}[Reihenfolge]
+ In welcher Reihenfolge die Mitglieder einer Menge aufgeschrieben werden, spielt \emph{keine Rolle}. Es geht nur darum, ob ein Element in der Menge enthalten ist, nicht darum, welches zuerst, welches als zweites usw. zur Menge hinzugefügt wurde.
+ \begin{align*}
+  \lbrace a;b\rbrace &= \lbrace b;a\rbrace\\
+  \lbrace 1;2;3 \rbrace = \lbrace 1;3;2\rbrace &= \lbrace 2;3;1\rbrace = \lbrace 2;1;3\rbrace \\ &= \lbrace 3;1;2\rbrace= \lbrace 3;2;1\rbrace
+ \end{align*}
+ Will man die Reihenfolge von Elementen berücksichtigen, so handelt es sich nicht um eine Menge, sondern um ein \emph{Tupel}. Tupel schreibt man im Gegensatz zu Mengen mit runden Klammern.
+ \begin{align*}
+  (1;2) \ne (2;1)
+ \end{align*}
+ Ein Beispiel für ein 2-Tupel ist die Angabe von Koordinaten in einem 2D-Koordinatensystem.
+\end{beme}
+
+\begin{defi}[Leere Menge]
+ Es gibt nur eine \emph{Leere Menge}. Alle Mengen, die keine Elemente beinhalten sind mit der Leeren Menge identisch. Wären sie nicht identisch, müssten sich die Mengen unterscheiden. Mengen sind aber nur durch ihre Elemente definiert.\index{Menge!leere}
+
+Die Menge aller rosafarbenen Einhörner auf der Steinernen Brücke in Regensburg ist eine mögliche Interpretation der Leeren Menge. Anschaulich entspricht die Leere Menge einer leeren Hülle ohne Inhalt.
+
+Die Leere Menge kürzt man entsprechend ab. Es werden aber drei verschiedene Symbole dafür verwendet:
+\begin{equation*}
+ \lbrace \rbrace = \emptyset = \varnothing
+\end{equation*}
+
+Die Leere Menge ist nicht nichts, sondern eine Menge, wie andere auch. Das Symbol \(\varnothing\) darf auch nicht mit der Zahl 0 verwechselt werden. Eine Zahl ist keine Menge. Die Zahl 0 gibt aber die Anzahl der Elemente in der Menge \(\varnothing\) an.
+\end{defi}
+
+\begin{regel}[Deskriptive Schreibweise]
+ Mengen können so viele Mitglieder haben, dass eine aufzählende Schreibweise sehr unhandlich ist.
+
+Dann greift man darauf zurück, ein beliebiges Element aus der Menge zu benennen - den \emph{Repräsentanten} - und dessen Eigenschaften, die seine Mengenzugehörigkeit definieren, anzugeben. Diese Eigenschaften trennt man mit einem senkrechten Strich ab.
+\begin{equation*}
+ \lbrace 1;2;3;4;\ldots \rbrace = \lbrace n \mid n\geqq 1\rbrace
+\end{equation*}
+
+Bei den Eigenschaften können auch mehrere Eigenschaften angegeben werden, die durch "`und"' oder "`oder"' verknüpft werden. Es ist auch möglich anzugeben, ob eine Eigenschaft nicht erfüllt sein darf. Für diese logischen Verknüpfungen gibt es auch eine eigene Symbolik. Dabei stehen \(\wedge\) für "`und"', \(\vee\) für "`oder"' und \(\lnot\) für "`nicht"'.
+\end{regel}
+
+\begin{bsp}[Deskriptive Schreibweise]
+ Die Menge \(\lbrace 10;11;\ldots;47\rbrace\) kann man auch schreiben als:
+ \begin{equation*}
+  \lbrace x \mid 10 \leqq x \leqq 47\rbrace
+ \end{equation*}
+ Man liest hier: "`Die Menge besteht aus allen \(x\) mit der Eigenschaft, dass \(x\) mindestens den Wert 10 und höchstens den Wert 47 annimmt."'
+ 
+ Oder man löst die doppelte Ungleichung in zwei Ungleichungen auf:
+ \begin{equation*}
+  \lbrace x \mid x\geqq 10 \wedge \neg (x>47)\rbrace
+ \end{equation*}
+\end{bsp}
+
+\begin{bsp}[gerade \& ungerade Zahlen]
+ Die geraden Zahlen sind die Vielfachen von 2. Die Menge der geraden Zahlen ist also:
+ \begin{equation*}
+  \lbrace x \mid x=2n \wedge n\in\mathbb{N}\rbrace
+ \end{equation*}
+ In Worten: "`Die Menge enthält alle Zahlen \(x\), die das Doppelte einer natürlichen Zahl sind."'
+ 
+ Die ungeraden Zaheln hingegen sind genau diejenigen Zahlen, die um 1 kleiner sind, als eine gerade Zahl. Somit lautet die Menge der ungeraden Zahlen:
+ \begin{equation*}
+  \lbrace x \mid x=2n-1 \wedge n\in\mathbb{N}\rbrace
+ \end{equation*}
+ In Worten: "`Die Menge enthält alle Zahlen \(x\), die um 1 kleiner als das Doppelte einer natürlichen Zahl sind."'
+\end{bsp}
+
+\begin{defi}[Mächtigkeit]
+ Unter der \emph{Mächtigkeit} einer Menge versteht man die Anzahl ihrer Elemente. Für die Mächtigkeit einer Menge sind zwei Schreibweisen verbreitet: Entweder man schreibt das Symbol der Menge in Betragsstriche oder setzt vor das Mengensymbol das Symbol \(\#\) (Doppelkreuz oder Raute, engl. "`hash"').\index{Mächtigkeit}
+\end{defi}
+
+\begin{bsp}[Mächtigkeit]
+Generell unterscheidet man endliche und unendliche Mengen. Folgende Mengen sind endlich.
+ \begin{align*}
+  A&=\lbrace 1;2;3 \rbrace & \#A &=3\\
+  B&=\lbrace a;b;c;\ldots;z\rbrace & \#B &= 26\\
+  C&=\lbrace x \mid x\in\mathbb{Z} \wedge -2\leqq x \leqq 5\rbrace & \#C &= 8
+ \end{align*}
+\end{bsp}
+
+\begin{regel}[Mengendifferenz]
+Wenn man aus einer Menge \(B\) die Elemente einer anderen Menge \(A\) ausschließen möchte, so bildet man die Differenz der Mengen.
+
+ \begin{figure}
+  \begin{center}
+   \begin{tikzpicture}
+    \begin{scope}
+        \clip \sc;
+        \draw[fill=black!20, draw=black!50, thick, even odd rule] \fc \sc node {$B$};
+    \end{scope}
+    \draw[draw=black!50, thick] \fc node {$A$} \sc;
+    \node[anchor=south] at (current bounding box.north) {$B \setminus A$};
+   \end{tikzpicture}
+  \end{center}
+  \caption{Differenz zweier Mengen}
+ \end{figure}
+ 
+ Die Differenz der Mengen \(B\) und \(A\) enthält alle Elemente von \(B\), die nicht in \(A\) liegen.
+ \begin{equation*}
+  B\setminus A = \lbrace x\mid x\in B\;\text{und}\; x\not\in A \rbrace
+ \end{equation*}
+
+\end{regel}
+
+\begin{defi}[Komplement]
+Das \emph{Komplement} einer Menge \(A\) besteht aus allen Elementen der Grundmenge \(\mathcal{G}\) außer denen, die in der Menge \(A\) enthalten sind.\index{Komplement}
+ \begin{figure}
+  \begin{center}
+   \begin{tikzpicture}
+   \draw[thick, rounded corners,fill=black!20, draw=black!50, even odd rule] (-3,-2) rectangle (3,2) \fc node{$A$};
+   \draw (0,1.7) node[] {Grundmenge \(\mathcal{G}\)};
+   \draw (-3,-2) node[anchor=south west] {\(\overline{A} = \mathcal{G}\setminus A\)};
+  \end{tikzpicture}
+  \end{center}
+  \caption{Komplement der Menge \(A\)}
+ \end{figure}
+ Es gibt verschiedene Schreibweisen für das Komplement: 
+ \begin{equation*}
+  \overline{A} = \complement A = \mathcal{G}\setminus A
+ \end{equation*}
+Das Komplement einer Menge ist der Teil, der zu dieser Menge ergänzt werden muss, um die Grundmenge zu erhalten.
+\end{defi}
+
+\begin{folg}
+ Das Komplement der Grundmenge ist die Leere Menge.
+ \begin{equation*}
+  \overline{\mathcal{G}} = \lbrace \rbrace
+ \end{equation*}
+\end{folg}
+
+\begin{folg}
+ Das Komplement der Leeren Menge ist die Grundmenge.
+ \begin{equation*}
+  \overline{\lbrace \rbrace} = \mathcal{G}
+ \end{equation*}
+\end{folg}
+
+\begin{folg}
+ Das Komplement vom Komplement einer Menge ergibt wieder die Menge selbst.
+ \begin{equation*}
+  \overline{\overline{A}} = \mathcal{G}\setminus (\mathcal{G}\setminus A) =  A
+ \end{equation*}
+\end{folg}
+
+\subsection{Teilmenge}
+
+\begin{defi}[Teilmenge, Obermenge]
+Sind alle Elemente einer Menge \(A\) in einer zweiten Menge \(B\) enthalten, so ist \(A\) eine \emph{Teilmenge} von \(B\) bzw. \(B\) ist eine \emph{Obermenge} von \(A\).\index{Teilmenge}\index{Obermenge}  Man schreibt:
+\begin{equation*}
+ A\subseteq B
+\end{equation*}
+
+ \begin{figure}
+  \begin{center}
+   \begin{tikzpicture}
+    \draw[draw=black!50, thick] \fc node {$B$};
+    \draw[draw=black!50,fill=black!20, thick] (-0.6,-0.6) circle (0.4cm) node {$A$};
+    \node[anchor=south] at (current bounding box.north) {$A\subseteq B$};
+   \end{tikzpicture}
+  \end{center}
+  \caption{\(A\) ist Teilmenge von \(B\)}
+ \end{figure}
+
+ Wenn die Menge \(A\) Teilmenge von \(B\) ist, so folgt für jedes Element \(x\in A\), dass \(x\in B\).
+\end{defi}
+
+\begin{defi}[Echte Teilmenge]
+ Die Menge \(A\) ist eine \emph{echte Teilmenge} von \(B\), wenn für jedes Element \(x\in A\) folgt, dass \(x\in B\), und es mindestens ein weiteres Element in \(B\) gibt, das nicht in \(A\) enthalten ist. Die Beziehung der echten Teilmenge schreibt man als:
+ \begin{equation*}
+  A\subset B = A \subsetneq B
+ \end{equation*}
+\end{defi}
+
+\subsection{Schnitt und Vereinigung}
+
+\begin{defi}[Schnittmenge]
+ Die \emph{Schnittmenge}, oder kurz der \emph{Schnitt}, der Mengen \(A\) und \(B\) beinhaltet genau die Elemente, die sowohl in \(A\) als auch in \(B\) enthalten sind.
+ \begin{equation*}
+  A\cap B = \lbrace x\mid x\in A \;\text{und}\; x\in B\rbrace
+ \end{equation*}
+ Die Symbole \(A \cap B\) spricht man als "`\(A\) geschnitten mit \(B\)"'.
+\begin{figure}
+  \begin{center}
+ \begin{tikzpicture}
+    \begin{scope}
+        \clip \fc;
+        \fill[draw=black!50,fill=black!20, thick] \sc;
+    \end{scope}
+    \draw[draw=black!50, thick] \fc node {$A$};
+    \draw[draw=black!50, thick] \sc node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cap B$};
+\end{tikzpicture}
+  \end{center}
+  \caption{Schnittmenge von \(A\) und \(B\)}
+ \end{figure}
+\end{defi}
+
+\begin{defi}[Vereinigungsmenge]
+ Die \emph{Vereinigungsmenge}, oder kurz die \emph{Vereinigung}, der Mengen \(A\) und \(B\) beinhaltet die Elemente, die in mindestens einer der beiden Mengen, also in \(A\) oder \(B\), enthalten sind.
+ \begin{equation*}
+  A\cup B = \lbrace x\mid x\in A \;\text{oder}\; x\in B\rbrace
+ \end{equation*}
+ Die Symbole \(A \cup B\) spricht man als "`\(A\) vereinigt mit \(B\)"'.
+ \begin{figure}
+  \begin{center}
+   \begin{tikzpicture}
+    \draw[draw=black!50,fill=black!20, thick] \fc node {$A$}
+                  \sc node {$B$};
+    \node[anchor=south] at (current bounding box.north) {$A \cup B$};
+\end{tikzpicture}
+  \end{center}
+  \caption{Vereinigungsmenge von \(A\) mit \(B\)}
+ \end{figure}
+\end{defi}
+
+\subsection{Intervall}
+
+\begin{defi}[Intervall]
+ Ein \emph{Intervall} ist eine zusammenhängende Menge, die nur durch die Angabe einer unteren und einer oberen Grenze festgelegt wird.\index{Intervall} Alle Elemente dazwischen sind dann Elemente des Intervalls. Intervalle können nur für Grundmengen angegeben werden, auf denen eine Ordnung -- zum Beispiel der Größe nach -- existiert. Intervalle werden mit eckigen Klammern geschrieben. 
+ \begin{equation*}
+  [u;o] = \lbrace x \mid u \leqq x \leqq o \rbrace
+ \end{equation*}
+ Die Ausrichtung der Klammern hat dabei eine Bedeutung. Zeigt eine Klammer nach außen, dann gehört diese Grenze gerade nicht mehr zum Intervall dazu.
+ \begin{align*}
+  [u;o[ &= \lbrace x \mid u \leqq x < o \rbrace \\
+  ]u;o] &= \lbrace x \mid u < x \leqq o \rbrace \\
+  ]u;o[ &= \lbrace x \mid u < x < o \rbrace
+ \end{align*}
+ Ein Intervall, dessen beide Grenzen zur Menge dazugehören, nennt man ein \emph{geschlossenes} Intervall. Ein Intervall, bei dem beide Grenzen nicht dazugehören, nennt man \emph{offen}.
+ 
+ Zu jedem Intervall gehört eine (Doppel-)Ungleichung, die jedes Element des Intervalls erfüllt.
+\end{defi}
+
+\begin{beme}[einseitige Begrenzung]
+ Auch für den Fall, dass eine Menge nur auf einer Seite beschränkt ist, kann ein Intervall angegeben werden. Dann verwendet man das Symbol \(\infty\) an der Seite, an der das Intervall nicht beschränkt ist.
+ \begin{align*}
+  \lbrace x\mid x>3 \rbrace &= ]3;\infty[ \\
+  \lbrace x\mid x\leqq 1 \rbrace &= ]-\infty;1]
+ \end{align*}
+ \(\infty\) ist aber keine Zahl und kann daher nicht in einer Menge enthalten sein. Das bedeutet, dass die eckige Klammer bei \(\infty\) oder \(-\infty\) immer nach außen zeigt.
+\end{beme}
+
+
+
+
+\section{Rechnen mit Brüchen}
+\label{sec:bruchrechnen}
+
+\subsection{Schreibweisen}
+
+Ein Bruch (siehe auch \ref{D:Anteil}) ist nur eine andere Schreibweise für eine Division.
+\begin{equation*}
+ \frac{a}{b} = a \div b
+\end{equation*}
+Da die Division durch Null nicht definiert ist, darf im Nenner eines Bruchs nie die Null stehen -- beliebig kleine Größen hingegen schon.
+
+Der Dividend \(a\) wird beim Bruch \emph{Zähler} genannt; der Divisor \(b\) wird \emph{Nenner} genannt.
+
+\begin{defi}[Stammbruch] \label{def:stammbruch}
+ Der \emph{Stammbruch} zu einer Zahl \(a\) ist derjenige Bruch mit \(1\) um Zähler und der Zahl \(a\) im Nenner: \(\frac{1}{a}\).
+\end{defi}
+
+\begin{beme}
+ Ein Bruch kann stets aufgefasst werden als ein Produkt aus Zähler und Stammbruch des Nenners.
+ \begin{align*}
+  a\cdot \frac{1}{b} &= \frac{a}{b} = \frac{1}{b}\cdot a
+ \end{align*}
+ Umgangssprachlich spricht man statt des Malpunkts auch ein "`von"'.
+ \begin{align*}
+  \frac{1}{b}\cdot a &= \frac{1}{b}\;\text{von}\;a
+ \end{align*}
+
+\end{beme}
+
+
+\begin{defi}[gemischter Bruch]
+ Ist bei einem Bruch der Zähler größer als der Nenner, so kann der Bruch auch als gemischter Bruch, also als ganze Zahl mit angehängtem Bruchteil geschrieben werden.
+ \begin{align*}
+  a&= n\cdot b +r \\
+  \frac{a}{b}&= \frac{n\cdot b+r}{b} = n + \frac{r}{b} = n\frac{r}{b}
+ \end{align*}
+ In diesem Fall wird auf ein Rechenzeichen zwischen der ganzen Zahl \(n\) und dem Bruch \(\frac{r}{b}\) verzichtet. Bei dem weggelassenen Rechenzeichen handelt es sich dann aber um ein Plus, nicht um ein Malzeichen.
+\end{defi}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{123}{6} = \frac{120+3}{6}= \frac{20\cdot 6+3}{6} = 20\frac{3}{6} = 20\frac{1}{2}
+ \end{equation*}
+\end{bsp}
+
+
+\begin{defi}[Kehrbruch]
+ Unter einem \emph{Kehrbruch} versteht man einen Bruch, den man aus einem anderen Bruch bildet, indem man Zähler und Nenner vertauscht.
+ \begin{align*}
+%   \frac{a}{b} \xrightarrow{\text{Kehrbruch}} \frac{b}{a}
+\frac{a}{b} \rightarrow \frac{b}{a}
+ \end{align*}
+ Statt vom Bilden des Kehrbruchs spricht man auch vom \emph{Invertieren} eines Bruchs.
+\end{defi}
+
+\begin{bsp}[Kehrbruch]
+Zähler und Nenner wechseln ihre Plätze.
+
+ \begin{itemize}
+  \item \(\frac{4}{3}\) ist der Kehrbruch zu \(\frac{3}{4}\).
+  \item \(\frac{1}{2}\) ist der Kehrbruch\\ und auch \hyperref[def:stammbruch]{Stammbruch} zu \(2\).
+  \item \(\frac{4x+y}{z}\) ist der Kehrbruch zu \(\frac{z}{4x+y}\).
+ \end{itemize}
+
+\end{bsp}
+
+
+\subsection{Erweitern und Kürzen}
+
+\begin{regel}[Erweitern]
+ Erweitern nennt man das Multiplizieren von Zähler und Nenner eines Bruchs mit der gleichen Zahl. Dabei bleibt der Wert des Bruchs erhalten.
+ \begin{eqnarray*}
+%   \frac{a}{b} &\xrightarrow{\text{Erweitern mit}\;c}& \frac{a\cdot c}{b\cdot c}\\
+  \frac{a}{b} &\rightarrow& \frac{a\cdot c}{b\cdot c} = \frac{ac}{bc}\\
+  \frac{a}{b} &=& \frac{ac}{bc}
+ \end{eqnarray*}
+ Das Erweitern vergrößert die Zahlen in Zähler und Nenner und macht damit den Bruch scheinbar "`komplizierter"'. Das ist aber oft nötig um größere Vereinfachungen zu erreichen.
+\end{regel}
+
+\begin{bsp}
+ \begin{equation*}
+%   \frac{2}{3} \xrightarrow{\text{Erweitern mit}\;5} \frac{2\cdot 5}{3\cdot 5}=\frac{10}{15}
+  \frac{2}{3} \rightarrow \frac{2\cdot 5}{3\cdot 5}=\frac{10}{15}
+  \end{equation*}
+\end{bsp}
+
+\begin{regel}[Kürzen]
+ Sind Zähler und Nenner Vielfache der Zahl, so können Zähler und Nenner durch diese Zahl dividiert werden, ohne den Wert des Bruchs zu verändern. Diesen Vorgang nennt man Kürzen.
+ \begin{align*}
+%   \frac{a\cdot c}{b\cdot c} &\xrightarrow{\text{Kürzen von}\;c} \frac{a\cdot \not{c}}{b\cdot \not{c}}=\frac{a}{b}
+ \frac{a\cdot c}{b\cdot c} &\rightarrow \frac{a\cdot \not{c}}{b\cdot \not{c}}=\frac{a}{b}
+ \end{align*}
+ Das Kürzen ist die gegenteilige Operation zum Erweitern.
+\end{regel}
+ 
+\begin{bsp}
+ \begin{equation*}
+  \frac{86}{24} = \frac{43\cdot 2}{12 \cdot 2} =
+  \frac{43}{12}
+ \end{equation*}
+\end{bsp}
+
+\begin{beme}
+ Kürzen ist nur dann möglich, wenn in Zähler und Nenner ein Produkt steht oder Zähler und Nenner als ein Produkt geschrieben werden können. Dazu kann es nötig sein, Summen durch Faktorisieren in Produkte umzuwandeln. Bei Zahlen kann eine Primfaktorzerlegung hilfreich sein.
+ \begin{equation*}
+  \frac{ab+ac}{ad} = \frac{a(b+c)}{ad} = \frac{b+c}{d}
+ \end{equation*}
+\end{beme}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{4x+2}{6} = \frac{2(2x+1)}{2\cdot 3} = \frac{2x+1}{3}
+ \end{equation*}
+\end{bsp}
+
+
+\begin{beme}
+Steht im Zähler oder Nenner hingegen eine Addition, so ist das Kürzen nicht möglich. Dies lässt sich kurz in folgendem Merksatz zusammenfassen:
+ \begin{quotation}
+  Aus Differenzen und aus Summen kürzen nur die Dummen.
+ \end{quotation}
+ \begin{align*}
+  \frac{a+b}{ac} &\ne \frac{b}{c} & \frac{a+b}{a+c} &\ne\frac{b}{c}
+ \end{align*}
+\end{beme}
+
+
+\subsection{Grundrechenarten}
+
+\begin{regel}[Multiplikation von Brüchen]\label{reg:mulfrac}
+ Zwei Brüche multipliziert man, in dem man die Zähler und die Nenner jeweils miteinander multipliziert.
+ \begin{equation*}
+  \frac{a}{b}\cdot\frac{c}{d} = \frac{a\cdot c}{b\cdot d}
+ \end{equation*}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{1}{4}\cdot \frac{2}{3} = \frac{1\cdot 2}{4\cdot 3} = \frac{2}{12} = \frac{1}{6}
+ \end{equation*}
+\end{bsp}
+ 
+ 
+\end{regel}
+
+\begin{regel}[Division von Brüchen]
+ Einen Bruch dividiert man durch einen anderen, indem man statt der Division mit dem Kehrbruch des Divisors multipliziert.
+ \begin{equation*}
+  \frac{a}{b}\div\frac{c}{d} = \frac{a}{b}\cdot \frac{d}{c} = \frac{ad}{bc}
+ \end{equation*}
+\end{regel}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{1}{2}\div \frac{2}{3} = \frac{1}{2}\cdot \frac{3}{2} = \frac{3}{4}
+ \end{equation*}
+\end{bsp}
+
+\begin{beme}[Doppelbruch]
+ Da eine Division immer auch als Bruch geschrieben werden kann, ist es möglich, die Division zweier Brüche als Bruch von Brüchen zu schreiben.
+ \begin{equation*}
+  \frac{a}{b}\div\frac{c}{d} = \frac{\frac{a}{b}}{\frac{c}{d}}
+ \end{equation*}
+ Beachte hierbei, dass der Bruchstrich in der Mitte etwas länger (oder dicker) als die Bruchstriche in Zähler und Nenner ist. Da für die Division das Kommutativgesetz \emph{nicht} gilt, spielt es eine Rolle, welche Division zuerst ausgeführt wird. Man kann sich auch Klammern um die Brüche in Zähler und Nenner schreiben, um die Berechnungsreihenfolge hervorzuheben.
+ \begin{equation*}
+  \frac{\frac{a}{b}}{\frac{c}{d}} = \frac{\left(\frac{a}{b}\right)}{\left(\frac{c}{d}\right)} 
+ \end{equation*}
+ Die Berechnung eines Doppelbruchs erfolgt genauso wie die Division zweier Brüche:
+ \begin{equation*}
+ \frac{\left(\frac{a}{b}\right)}{\left(\frac{c}{d}\right)}= \left(\frac{a}{b}\right) \cdot \left(\frac{d}{c}\right) = \frac{ad}{bc}
+ \end{equation*}
+\end{beme}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{\frac{1}{2}}{\frac{4}{5}} = \frac{1}{2}\div \frac{4}{5} = \frac{1}{2}\cdot \frac{5}{4} = \frac{5}{8}
+ \end{equation*}
+\end{bsp}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{x}{\frac{7}{5}} = x\div \frac{7}{5} = x \cdot \frac{5}{7}  = \frac{5}{7}x
+ \end{equation*}
+\end{bsp}
+
+\begin{regel}[Addition von Brüchen]
+ Zwei Brüche lassen sich nur addieren, wenn sie den gleichen Nenner besitzen. Dann erhält das Ergebnis denselben Nenner, während die Zähler addiert werden.
+ \begin{equation*}
+  \frac{a}{c} + \frac{b}{c} = \frac{a+b}{c}
+ \end{equation*}
+ Haben die beiden Summanden nicht den gleichen Nenner, sind sie also nicht \emph{gleichnamig}, so müssen sie auf einen \emph{Hauptnenner} erweitert werden. Als Hauptnenner ist immer das Produkt der bisherigen Nenner geeignet.
+ \begin{align*}
+  \frac{a}{c} + \frac{b}{d} &= \frac{a\cdot d}{c\cdot d} + \frac{b \cdot c}{d \cdot c} = \frac{ad}{cd} + \frac{bc}{cd} = \frac{ad+bc}{cd}
+ \end{align*}
+ Der einfachste Hauptnenner ist das \emph{kleinste gemeinsame Vielfache} (kgV) der bisherigen Nenner.
+\end{regel}
+
+\begin{bsp}[Addition von Brüchen]
+Sind die Nenner nicht gleich, muss zunächst auf den Hauptnenner erweitert werden.
+ \begin{itemize}
+  \item \( \frac{2}{7} + \frac{4}{7} = \frac{6}{7}\)
+  \item \( \frac{2}{7} + \frac{3}{5} = \frac{2\cdot 5}{7\cdot 5} + \frac{3\cdot 7}{5\cdot 7} = \frac{10}{35} + \frac{21}{35} = \frac{31}{35}\)
+  \item \( \frac{2}{7} + \frac{16}{21} = \frac{2\cdot 3}{7\cdot 3} + \frac{16}{21} = \frac{6}{21} + \frac{16}{21} = \frac{22}{21}=1\frac{1}{21}\)
+ \end{itemize}
+
+\end{bsp}
+
+\section{Lineare Terme}
+\label{sec:linterm}
+
+\begin{defi}[Linearer Term]
+ Ein Term \(T(x)\) heißt \emph{linear}, wenn in ihm nur Summanden ohne Variable oder mit Variable in erster Potenz vorkommen. Ein linearer Term ist zum Beispiel:
+ \begin{equation*}
+  T(x) = 2x+4-5x+7
+ \end{equation*}
+ Fasst man in einem linearen Term alle gleichnamigen Terme zusammen, so erhält man nur noch zwei Summanden: der erste Summand enthält die Variable \(x\), während der zweite nur aus einer Zahl besteht.
+ \begin{equation*}
+  T(x) = 2x+4-5x+7 = -3x+11
+ \end{equation*}
+ Daraus ergibt sich die allgemeine Form für einen linearen Term:
+ \begin{equation*}
+  T(x) = mx+t
+ \end{equation*}
+\end{defi}
+
+\subsection{Lineare Gleichung}
+
+\begin{defi}[Lineare Gleichung]
+ Eine \emph{lineare Gleichung} ist eine Gleichung deren beide Seiten lineare Terme sind.
+ \begin{equation*}
+  mx+t = nx+s
+ \end{equation*}
+ Dabei können die Parameter \(m\), \(n\), \(t\) und \(s\) auch gleich null sein.
+ 
+ Eine lineare Gleichung hat genau dann eine Lösung, wenn \(m\ne n\). Sie hat keine Lösung, bzw. ihre Lösungsmenge ist die Leere Menge, wenn \(m=n\).
+\end{defi}
+
+\begin{regel}[Lösen einer lin. Gleichung]
+ Zu Lösung einer linearen Gleichung bringt man durch \emph{Äquivalenzumformungen} zunächst alle Terme mit der gesuchten Variablen \(x\) auf eine Seite der Gleichung und alle Zahlen auf die andere. Dann fasst man die gleichnamigen Terme zusammen und dividert anschließend die Gleichung durch den Vorfaktor von \(x\).
+ 
+ Äquivalenzumformungen sind Rechenoperationen, die man auf beiden Seiten der Gleichung im gleichen Schritt durchführt, ohne dabei die Gleichwertigkeit der beiden Seiten der Gleichung zu stören. Dieser Prozess ist vergleichbar mit dem beidseitigen Hinzufügen oder Entfernen von Gewichten auf einer Balkenwaage.
+ 
+ \begin{align*}
+  mx + t &= nx +s && | -nx -t \\
+  mx-nx &= s-t \\
+  (m-n)x &= s-t && | \div (m-n) \\
+  x&= (s-t)\div(m-n) =  \frac{s-t}{m-n}\\
+  \mathcal{L} &= \left\lbrace \frac{s-t}{m-n} \right\rbrace
+ \end{align*}
+ 
+\end{regel}
+
+\begin{bsp}[Lineare Gleichung]
+ \begin{align*}
+  2x+5 &= 3x -7 &&|-3x-5 \\
+  -x &=-12 &&| \div (-1) \\
+  x &= 12 \\
+  \mathcal{L}&= \lbrace 12\rbrace \\\hline
+  \intertext{Probe:}
+  2\cdot \underline{12} +5 &=29 = 3\cdot \underline{12}-7
+ \end{align*}
+
+\end{bsp}
+
+\subsection{Proportionalität}
+
+\begin{defi}[Direkte Proportionalität]
+
+Zwei Größen heißen zueinander \emph{direkt proportional}, wenn ihr \emph{Verhältnis} stets gleich ist. \emph{Verhältnis} ist hier nur eine andere Bezeichnung für den Quotienten dieser beiden Größen. Man schreibt:
+\begin{align*}
+ x \propto y &\Leftrightarrow \frac{y}{x}= c = \text{konstant}
+\end{align*}
+Die Größe \(c\) nennt man dann die \emph{Proportionalitätskonstante}. Das Zeichen \(\propto\) liest man hierbei also "`ist proportional zu"'. Das Vorliegen einer direkten Proportionalität erkennt man an der \emph{Quotientengleichheit} der beiden Größen.
+
+Manchmal findet man auch die Schreibweise \(x\sim y\). "`\(\sim\)"' bedeutet aber eigentlich "`ist ähnlich zu"'.
+
+Fasst man das Wertepaar \((x\vert y)\) als einen Punkt in einem kartesischen Koordinatensystem auf. So liegen diese Punkte auf einer \emph{Ursprungsgeraden} des Koordinatensystems genau dann, wenn die Größen \(x\) und \(y\) direkt proportional zueinander sind.
+
+Liegt eine direkte Proportionalität vor, so kann man die Beziehung der beiden Größen stets durch einen je-desto-Satz beschreiben:
+\begin{quote}
+ Je größer \(x\), desto größer \(y\).
+\end{quote}
+Das Doppelte (Dreifache, \ldots) einer Größe hat immer das Doppelte (Dreifache, \ldots) der anderen Größe zur Folge.
+\end{defi}
+
+\begin{bsp}[Direkte Proportionalität]
+ Bewegt sich ein Körper mit der konstanten Geschwindigkeit \(v=2\,\frac{\text{m}}{\text{s}}\), so sind die vergangene Zeit \(t\) und die zurückgelegte Strecke \(x\) zueinander direkt proportional. Wertepaare, die dieser Beziehung entsprechen sind:
+ \begin{table*}
+ \centering
+ \begin{tabular}{l| cccc}
+  \(t\) in s & 0 & 1 & 5 & 7.5 \\ \hline
+  \(x\) in m & 0 & 2 & 10 & 15
+ \end{tabular}
+ \end{table*}
+\end{bsp}
+
+\begin{defi}[Indirekte Proportionalität]
+ Zwei Größen heißen zueinander \emph{indirekt proportional}, wenn ihr Produkt stets den gleichen Wert ergibt. Sie zeichnen sich also durch \emph{Produktgleichheit} aus. Man schreibt:
+ \begin{equation*}
+  x \propto \frac{1}{y} \Leftrightarrow x\cdot y = c = \text{konstant}
+ \end{equation*}
+ Die Größe \(c\) nennt man auch hier die \emph{Proportionalitätskonstante}. Die indirekte Proportionalität ist identisch mit der direkten Proportionalität der einen Größe zum Kehrwert der anderen.
+ 
+ Fasst man das Wertepaar \((x\vert y)\) als einen Punkt in einem kartesischen Koordinatensystem auf. So liegen diese Punkte auf einer \emph{Hyperbel} --  einer Kurve, die sich den Achsen des Koordinatensystems beliebig nahe annähert, ohne sie zu schneiden.
+
+Liegt eine indirekte Proportionalität vor, so kann man die Beziehung der beiden Größen stets durch einen je-desto-Satz beschreiben:
+\begin{quote}
+ Je größer \(x\), desto \emph{kleiner} \(y\).
+\end{quote}
+Das Doppelte (Dreifache, \ldots) der einen Größe hat immer die Hälfte (das Drittel, \ldots) der anderen Größe zur Folge.
+\end{defi}
+
+\begin{bsp}[Indirekte Proportionalität]
+ Auf einem kleinen Bauernhof reicht das Futter für \(e=24\)~Enten genau \(t=10\)~Tage lang. Wie lange würde das Futter für 30 Enten ausreichen?
+ 
+ Das Futter reicht für \(c=e\cdot t =240\)~Ententage. Das ist hier die Proportionalitätskonstante. Für 30~Enten gilt:
+ \begin{align*}
+  e\cdot t &= c \\
+  t &= \frac{c}{e}\\
+  t &= \frac{240\,\text{Ententage}}{30\,\text{Enten}} = 8\,\text{Tage}
+ \end{align*}
+\end{bsp}
+
+
+\section{Funktionen}
+\subsection{Funktionsbegriff}
+\begin{defi}[Funktion]
+Eine \emph{Funktion} ist eine \emph{eindeutige Zuordnung}.
+ \begin{figure}
+ \begin{center}
+  \begin{tikzpicture}[x=1cm,y=1cm]
+\node[minimum size=2em](x) at (0,1) {$x$};
+\node[rectangle, thick, draw=black, minimum size=1cm](f) at (1,0) {$f$};
+\node[minimum size=2em](y) at (2,-1) {$y$};
+\draw[->] (x) -| (f);
+\draw[->] (f) |-(y);
+
+\draw[dashed] (3,-1) -- (3,1);
+
+\node[minimum size=2em](df) at (4,0.5) {$\mathcal{D}_f$};
+\node[minimum size=2em](wf) at (6,0.5) {$\mathcal{W}_f$};
+\draw[-latex] (df) -- node[above]{\(f\)} (wf);
+\node[minimum size=2em](x2) at (4,-0.5) {$x$};
+\node[minimum size=2em](y2) at (6,-0.5) {$y$};
+\draw[|-latex] (x2) -- (y2);
+\end{tikzpicture}
+\end{center}
+\caption{Symbolische Darstellungen einer Funktion}
+ \end{figure}
+ 
+Eine Funktion \(f\) ordnet jedem Element aus der \emph{Definitionsmenge} \(\mathcal{D}_f\) ein Element aus der \emph{Wertemenge} \(\mathcal{W}_f\) zu. Man sagt auch ein Wert \(x\) \emph{wird abgebildet auf} \(y\) (in Zeichen: \(x\mapsto y\)).
+
+Eine Funktion ist durch Angabe des Funktionsterms und der Definitionsmenge vollständig bestimmt. Eine andere Möglichkeit wäre die Angabe aller möglichen Wertepaare \((x;y)\), z.B. in Form einer Tabelle, die durch die Funktion einander zugeordnet werden.
+\end{defi}
+
+
+\subsection{Graph einer Funktion}
+
+\begin{defi}[Funktionsgraph]
+ Der Graph \(\mathcal{G}_f\) einer Funktion \(f\) ist die Menge aller Punkte \(P (x\vert y)\), deren Koordinaten die Gleichung 
+  \(f(x) =y\)
+ erfüllen.
+ In Zeichen: 
+ \begin{equation*}
+  \mathcal{G}_f = \left\lbrace P(x\vert y) \mid x \in \mathcal{D}_f \;\text{und}\; y \in \mathcal{W}_f \;\text{und}\; y=f(x)\right\rbrace
+ \end{equation*}
+ Trägt man alle Punkte, die sich in dieser Menge befinden in ein Koordinatensystem ein, so erhält man den charakteristischen Verlauf -- die "`Kurve"' -- der Funktion \(f\).
+\end{defi}
+
+\begin{bsp}[Funktionsgraph]
+ Gegeben ist die Funktion \(f\) mit dem Funktionsterm \(f(x)=\frac{1}{3}\cdot x\) und der Definitionsmenge \(\mathcal{D}_f=\left[3;9\right]\subset \mathbb{Q} \). Dies kann man auch schreiben als:
+ \begin{align*}
+  f:\qquad x & \mapsto y=\frac{1}{3}x \\
+    [3;9]&\rightarrow [1;3]
+ \end{align*}
+ Dann entspricht der zugehörige Graph folgender Punktemenge.
+ \begin{align*}
+  \mathcal{G}_f= \left\lbrace P(x\vert y) \mid x \in [3;9] \;\text{und}\; y=\frac{1}{3}x\right\rbrace
+ \end{align*}
+ Oder dargestellt im Koordinatensystem:
+ \begin{figure}
+  \begin{center}
+   \begin{tikzpicture}[domain=-0.5:9.5,y=1cm,x=1cm,scale=0.75]
+    \draw[very thin,color=gray] (-0.5,-0.1) grid (9.5,3.5);
+%     \draw[very thin,color=gray, xstep=pi/8, ystep=0.25] (0,0) grid (pi/2,1);
+    \draw[->] (-0.6,0) -- (9.6,0) node[right] {$x$};
+    \draw[->] (0,-0.2) -- (0,3.6) node[above] {$y$};
+    \draw (0,0) node [anchor=north east] {\footnotesize \(0\)};
+    \draw (1,0) node [anchor=north] {\footnotesize  \(1\)};
+    \draw (3,0) node [anchor=north] {\footnotesize  \(3\)};
+    \draw (5,0) node [anchor=north] {\footnotesize  \(5\)};
+    \draw (9,0) node [anchor=north] {\footnotesize  \(9\)};
+    \draw (0,1) node [anchor=east, fill=white] {\footnotesize \(1\)};
+    \draw (0,2) node [anchor=east, fill=white] {\footnotesize \(2\)};
+    \draw (0,3) node [anchor=east, fill=white] {\footnotesize \(3\)};
+    \draw[very thick, green!50!black] (3,0) -- (9,0) node[anchor= north west]{\(\mathcal{D}_f\)};
+    \draw[thick, dashed, green!50!black] (3,0) -- (3,1);
+    \draw[thick, dashed, green!50!black] (9,0) -- (9,3);
+    \draw[very thick, blue!50!black] (0,1) -- (0,3) node[anchor= south west]{\(\mathcal{W}_f\)};
+    \draw[thick, dashed, blue!50!black] (0,1) -- (3,1);
+    \draw[thick, dashed, blue!50!black] (0,3) -- (9,3);
+%     \clip (3,0) rectangle (9,0);
+    \draw[color=red] plot[id=graphsim, domain=3:9] function{0.3333*x} node[anchor=west, inner sep=1pt, fill=white] {$\mathcal{G}_f$};
+%     \draw[color=red] node[right] {$f(x) =\sin(x)$};
+%     \draw[color=red] (4,16) circle (2pt) node[anchor=west] {\((4|16)\)};
+%     \draw[color=blue] plot[id=cosx, samples=200] function{cos(x)} 
+%         node[right] {$\cos(\alpha)$};
+%     \draw[color=green!50!black] plot[id=tanx, domain=(-pi/2+0.1):(pi/2-0.1), samples=200] function{tan(x)}; 
+%     \draw[color=green!50!black] plot[id=tan2x,  domain=(pi/2+0.1):(3*pi/2-0.1), samples=200] function{tan(x)};
+%     \draw[color=green!50!black] (4.4,1.5) node[right,fill=white] {$\tan(\alpha)$};   
+\end{tikzpicture}
+  \end{center}
+  \caption{Graph der Funktion \(f: x\mapsto \frac{1}{3}x\)}
+
+ \end{figure}
+
+\end{bsp}
+
+\subsection{Lineare Funktion}
+\begin{beme}[Lineare Funktion]
+ Fasst man einen linearen Term als Funktion \(f(x) =mx+t\) auf, so ist der zugehörige Funktionsgraph eine Gerade. Diese Gerade schneidet dann die \(y\)-Achse beim Wert \(t\) (\(y\)-Achsenabschnitt) und hat die \emph{Steigung} \(m\). Eine Steigung \(m\) bedeutet, dass bei jeder Änderung von \(x\) um \(+1\) sich der Wert des Funktionsterms um \(m\) verändert.
+ \begin{align*}
+  f(x+1) &= m(x+1)+t = mx +m +t \\ &= \underbrace{mx+t}_{=f(x)} +m \\ f(x+1) &= f(x) +m
+ \end{align*}
+
+\end{beme}
+
+\begin{bsp}
+ Betrachtet man den linearen Term \(f(x) = 4x+5\), so gilt
+ \begin{align*}
+  f(0) &= 4\cdot 0 +5 = 5 &&  \text{y-A.-A.}\\
+  f(x+1) &= 4(x+1)+5 =  f(x) +4 \\
+  f(x+1)-f(x) &= 4 && \text{Steigung}
+ \end{align*}
+
+\end{bsp}
+
+
+\section{Lineare Gleichungssysteme (\ensuremath{2\times 2})}
+\begin{defi}[Lineares Gleichungssystem]
+Ein \emph{Lineares Gleichungssystem} besteht aus mindestens zwei Gleichungen mit mindestens zwei Variablen, die in diesen Gleichungen nicht in einer Potenz\footnote{also z.B. nicht im Quadrat} vorkommen. Jede Gleichung enthält dabei eine Information über die Beziehung der unbekannten Größen zueinander.
+\end{defi}
+
+\begin{beme}[\ensuremath{2\times 2}-Gleichungssystem]
+ Ein Gleichungssystem aus zwei linearen Gleichungen mit zwei Variablen (z.B. \(x\) und \(y\)) nennt man ein \(2\times 2\)-Gleichungssystem. Die Lösung eines solchen Gleichungssystems besteht also aus einer Menge von \emph{Zahlenpaaren} \((x;y)\). Eine lineare Gleichung mit zwei Unbekannten kann auch als Funktionsgleichung einer linearen Funktion interpretiert werden. Der Graph einer linearen Funktion ist eine Gerade. Daher entspricht die Bestimmung der gemeinsamen Lösung zweier linearer Gleichungen der Suche nach dem \emph{Schnittpunkt} der beiden zugehörigen Geraden.
+\end{beme}
+
+\begin{bsp}[Lineares Gleichungssystem]
+ \begin{align*}
+  \text{I} && x+y &= 3\\
+  \text{II} && x-y &= 1 
+ \end{align*}
+ Dieses Gleichungssystem hat die Lösung:
+ \begin{equation*}
+  \mathcal{L} = \lbrace (2;1)\rbrace
+ \end{equation*}
+ Das kann leicht durch Einsetzen von \(x=2\) und \(y=1\) überprüft werden.
+\end{bsp}
+
+\begin{beme}[Anzahl der Lösungen]
+ Zwei Geraden können entweder\ldots
+ \begin{itemize}
+  \item genau einen Schnittpunkt haben, wenn ihre Steigung unterschiedlich ist, oder
+  \item gar keinen Schnittpunkt haben, wenn ihre Steigung gleich ist\footnote{Dann liegen die Geraden parallel zueinander.} und ihr y-Achsenabschnitt verschieden, oder
+  \item unendlich viele Schnittpunkte haben, wenn die Geraden identisch sind. Letzteres ist der Fall, wenn die Funktionsgleichungen Vielfache voneinander sind.
+ \end{itemize}
+\end{beme}
+
+\begin{bsp}[keine Lösung]
+ Ein Gleichungssystem ist nicht lösbar, wenn die Gleichungen auf einen Widerspruch führen.
+ \begin{align*}
+  \text{I} && x+y &= 3\\
+  \text{II} && 2x+2y &= 8  
+ \end{align*}
+ Aber:
+ \begin{equation*}
+  2x+2y = 2(x+y) \stackrel{\text{I}}{=}2 \cdot 3 = 6 \ne 8 
+ \end{equation*}
+ Hier liegt ein Widerspruch zwischen den Gleichungen vor. Daher ist die Lösungsmenge leer.
+\end{bsp}
+
+\begin{bsp}[unendlich viele Lösungen]
+ Sind die beiden Gleichungen Vielfache voneinander, dann beschreiben sie identische Geraden.
+ \begin{align*}
+  \text{I} && x+y &= 3\\
+  \text{II} && 2x+2y &= 6  
+ \end{align*}
+ Beide Gleichungen können zur Gleichung \(y=3-x\) umgeformt werden. Somit besteht die Lösungsmenge aus unendlich vielen Lösungen:
+ \begin{equation*}
+  \mathcal{L} = \left\lbrace (x;3-x) | x\in\mathbb{Q} \right\rbrace
+ \end{equation*}
+
+\end{bsp}
+
+\subsection*{Lösungsverfahren}
+
+\begin{regel}[Einsetzungsverfahren]
+ Beim Einsetzungsverfahren löst man eine der beiden Gleichung nach einer der Variablen auf und setzt diesen Term dann in der zweiten Gleichung für die Variable ein. Damit erhält man eine Gleichung mit nur einer Unbekannten, was direkt lösbar ist. Die zweite Unbekannte erhält man dann durch das Einsetzen der bisher gefundenen Teillösung.
+\end{regel}
+
+\begin{bsp}[Einsetzungsverfahren]
+ \begin{align*}
+  \text{I}&& x+y &= 5\\
+  \text{II}&& 2x+3y &= 8
+ \end{align*}
+ Auflösen von I nach \(x\):
+ \begin{align*}
+  \text{I}&& x+y &= 5\\
+  \text{I'}&& x &= 5-y
+ \end{align*}
+ Einsetzen in II:
+ \begin{align*}
+  \text{II}&& 2x+3y &= 8 \\
+  && 2(5-y)+3y &= 8 \\
+  && 10-2y+3y &= 8\\
+  && y &= -2
+ \end{align*}
+ Einsetzen in I':
+ \begin{align*}
+  \text{I'}&& x &= 5-(-2) =7\\
+  &&\mathcal{L} &= \lbrace (7;-2) \rbrace
+ \end{align*}
+\end{bsp}
+
+\begin{regel}[Gleichsetzungsverfahren]
+Das Gleichsetzungsverfahren ist lediglich eine Variante des Einsetzungsverfahrens. Hier werden beide Gleichungen nach der gleichen Variablen (z.B. \(y\)) aufgelöst und dann gleichgesetzt. Auch so erhält man eine Gleichung mit nur einer Unbekannten.  
+
+Das Gleichsetzungsverfahren bietet sich immer dann an, wenn bereits beide Gleichungen nach einer gemeinsamen Variablen aufgelöst sind. Dieser Fall liegt immer dann vor, wenn zwei Funktionsterme gegeben sind. Diese sind dann nämlich schon nach \(y\) aufgelöst.
+\end{regel}
+
+\begin{bsp}[Gleichsetzungsverfahren]
+ \begin{align*}
+  \text{I}&& x+y &= 5\\
+  \text{II}&& 2x+3y &= 8
+ \end{align*}
+ Auflösen von I und II nach \(y\):
+ \begin{align*}
+  \text{I'}&& y &= 5-x\\
+  \text{II'}&& y &= \frac{8}{3}-\frac{2}{3}x
+ \end{align*}
+ Gleichsetzen:
+ \begin{align*}
+  5-x &= \frac{8}{3}-\frac{2}{3}x &&|+x -\frac{8}{3} \\
+  5-\frac{8}{3} &= \frac{1}{3}x &&|\cdot 3\\
+  x&= 15-8 =7
+ \end{align*}
+ Einsetzen in I' oder II':
+ \begin{align*}
+  y&=5-7 =-2\\
+  \mathcal{L}&=\lbrace(7;-2)\rbrace
+ \end{align*}
+\end{bsp}
+
+\begin{regel}[Additionsverfahren]
+ Das Additionsverfahren macht von der Idee Gebrauch, dass Gleiches addiert zu Gleichem wieder einander gleich ist. Dazu werden zunächst die Gleichungen sortiert: Alle Summenterme mit Variablen kommen auf die linke Seite, diejenigen ohne Variablen auf die rechte Seite der Gleichung. Die Terme mit Variablen werden dann noch alphabetisch gereiht. Dann folgt die eigentliche Addition: Ein Vielfaches der einen Gleichung wird zu einem Vielfachen der anderen Gleichung addiert, sodass eine der Variablen wegfällt. Dabei werden die linken Seiten untereinander und die Zahlen der rechten Seiten untereinander addiert. So ergibt sich -- wie auch bei den anderen Verfahren -- eine Gleichung mit nur noch einer Unbekannten.
+ 
+ Das Additionsverfahren ist technisch anspruchsvoller als die bisher vorgestellten Lösungsverfahren, aber meistens wesentlich kürzer.
+\end{regel}
+ 
+ \begin{bsp}[Additionsverfahren]
+  \begin{align*}
+  \text{I}&& x+y &= 5\\
+  \text{II}&& 2x+3y &= 8
+ \end{align*}
+ \(\text{II}+(-2)\cdot \text{I}\):
+ \begin{align*}
+  2x+3y -2(x+y) &= 8-2\cdot 5 \\
+  y &= -2
+ \end{align*}
+ \(\text{II}+(-3)\cdot \text{I}\):
+ \begin{align*}
+  2x+3y -3(x+y) &= 8-3\cdot 5 \\
+  -x &= -7\\
+  \mathcal{L}&=\lbrace(7;-2)\rbrace
+ \end{align*}
+ \end{bsp}
+
+
+\section{Potenzgesetze}
+\label{sec:potenzgesetze}
+
+
+% \tikzstyle{na} = [baseline=+ex]
+
+Eine Potenz ist eine abkürzende Schreibweise für ein Produkt aus lauter gleichen Faktoren.
+% \begin{equation*}
+% \huge \tikz[remember picture,baseline]{\node[fill=blue!20,anchor=base] (t1) {$a$};}^{\tikz[remember picture, baseline]{\node[fill=orange!20,anchor=base] (t2) {$n$};}}
+% \end{equation*}
+\begin{equation*}
+a^n
+\end{equation*}
+Der Exponent~\(n\) gibt an, wie oft die Basis~\(a\) mit sich selbst multipliziert wird.
+% Der Exponent\tikz[remember picture] \node[coordinate] (n1) {}; \(n\) gibt an, wie oft die Basis\tikz[remember picture] \node[coordinate] (n2) {}; \(a\) mit sich selbst multipliziert wird.
+% \begin{tikzpicture}[remember picture, overlay]
+%         \draw[->,na] (n1)+(0,1ex) to[bend left] (t2);
+%         \draw[->,na] (n2)+(0,1ex) to[bend right] (t1);
+% %         \path[->]<3-> (n3) edge [out=0, in=-90] (t3);
+% \end{tikzpicture}
+\begin{equation*}
+ a^n = \underbrace{a\cdot a \cdots a}_{n\text{-mal}}
+\end{equation*}
+Die Potenz ist also nur eine abkürzende Schreibweise für eine \(n\)-malige Multiplikation.
+
+\begin{regel}
+ Multipliziert man zwei Potenzen gleicher Basis, so werden deren Exponenten addiert.
+ \begin{align*}
+ a^n \cdot a^m &= \underbrace{a\cdot a \cdots a}_{n\text{-mal}} \cdot \underbrace{a\cdot a \cdots a}_{m\text{-mal}}\\
+ &= \underbrace{a\cdot a \cdots a}_{n+m\text{-mal}}\\
+ &= a^{n+m}
+ \end{align*}
+\end{regel}
+
+\begin{bsp}[Multiplikation von Potenzen]
+ \begin{align*}
+  2^3\cdot 2^4 &= \overbrace{2\cdot 2\cdot 2}^{3\text{-mal}} \cdot \overbrace{2\cdot 2 \cdot 2 \cdot 2}^{4\text{-mal}}\\
+  &= 2^{3+4} = 2^7
+ \end{align*}
+ \begin{align*}
+  12^2 \cdot 12 &= 12^2 \cdot 12^1 = 12^{2+1} = 12^3
+ \end{align*}
+ Potenzen mit unterschiedlicher Basis lassen sich so nicht zusammenfassen. Man kann aber versuchen, die gleiche Basis herzustellen.
+ \begin{align*}
+  6^4 \cdot 3^3 &= (2\cdot 3)^4 \cdot 3^3 = 2^4 \cdot 3^4 \cdot 3^3 = 2^4 \cdot 3^7
+ \end{align*}
+
+\end{bsp}
+
+
+\begin{regel}
+ Potenziert man eine Potenz, so werden die Exponenten multipliziert.
+ \begin{align*}
+  \left(a^n\right)^m &= \overbrace{a^n \cdot a^n \cdots a^n}^{m\text{-mal}}\\
+  &= \overbrace{\underbrace{a\cdot a \cdots a}_{n\text{-mal}} \cdot \underbrace{a\cdot a \cdots a}_{n\text{-mal}} \cdots \underbrace{a\cdot a \cdots a}_{n\text{-mal}}}^{m\text{-mal}}\\
+  &= \underbrace{a\cdot a \cdots a}_{n\cdot m\text{-mal}}\\
+  &= a^{n\cdot m}
+ \end{align*}
+\end{regel}
+
+\begin{folg}[Kommutativgesetz der Exponenten]
+Wird eine Potenz potenziert, so können die Exponenten vertauscht werden.
+ \begin{equation*}
+  \left(a^n\right)^m = a^{n\cdot m} = a^{m\cdot n} = \left(a^m\right)^n
+ \end{equation*}
+
+\end{folg}
+
+\begin{bsp}
+ \begin{align*}
+  \left(3^2\right)^3 &= \overbrace{3^2\cdot 3^2\cdot 3^2}^{3\text{-mal}} \\
+  &= \overbrace{3\cdot 3 \cdots 3}^{6\text{-mal}}
+  &= 3^{2\cdot 3} = 3^6
+ \end{align*}
+\end{bsp}
+
+\begin{folg}[Produkte von Potenzen]\label{folg:prodpot}
+ Werden Potenzen mit gleichem Exponenten miteinander multipliziert, so lassen sie sich zu einer Potenz zusammenfassen.
+ Dabei wird das \hyperref[ssec:komm]{Kommutativgesetz} der Multiplikation angewandt.
+ \begin{equation*}
+  a^n \cdot b^n = \underbrace{a\cdot a \cdots a}_{n}\cdot\underbrace{b\cdot b\cdots b}_n = \underbrace{ab \cdot ab \cdots ab}_n = (ab)^n
+ \end{equation*}
+
+\end{folg}
+
+\begin{folg}[Quotienten von Potenzen]\label{folg:quotpot}
+ Werden Potenzen mit gleichem Exponenten dividiert, so lässt sich die Division der Potenzen zu einer Potenz zusammenfassen.
+ Dabei wird die Regel zur \hyperref[reg:mulfrac]{Multiplikation von Brüchen} angewandt.
+ \begin{equation*}
+  \frac{a^n}{b^n} = \frac{\overbrace{a\cdot a \cdots a}^{n}}{\underbrace{b\cdot b\cdots b}_n}= \underbrace{\frac{a}{b} \cdot \frac{a}{b} \cdots \frac{a}{b}}_n = \left(\frac{a}{b}\right)^n
+ \end{equation*}
+\end{folg}
+
+
+\begin{defi}[Negativer Exponent]
+Ist der Exponent \((-1)\), so ist die Potenz identisch mit dem Kehrbruch der Basis.
+ \begin{align*}
+  a^{-1} &= \frac{1}{a}
+ \end{align*}
+\end{defi}
+
+\begin{beme}
+ Der Kehrbruch eines Bruchs kann auch als "`hoch \(-1\)"' geschrieben werden:.
+ \begin{align*}
+  \frac{b}{a} &= \left(\frac{a}{b}\right)^{-1}
+ \end{align*}
+
+\end{beme}
+
+
+\begin{folg}
+Ein negatives Vorzeichen im Exponenten entspricht dem Kehrbruch der Potenz mit positivem Vorzeichen im Exponenten.
+ \begin{align*}
+  a^{-n} = a^{(-1)\cdot n} &= \left(a^n\right)^{-1} = \frac{1}{a^n}\\
+  &= \left( a^{-1} \right)^n = \left(\frac{1}{a}\right)^n = \underbrace{\frac{1}{a}\cdot \frac{1}{a} \cdots \frac{1}{a}}_{n\text{-mal}}
+ \end{align*}
+
+\end{folg}
+
+\begin{regel}
+ Dividiert man eine Potenz durch eine andere mit gleicher Basis, so werden die Exponenten subtrahiert.
+ \begin{align*}
+  \frac{a^n}{a^m} &= a^n \cdot  \frac{1}{a^m} = a^n \cdot a^{-m}\\
+   &= a^{n-m}
+ \end{align*}
+\end{regel}
+
+\begin{bsp}
+ \begin{equation*}
+  \frac{3^7}{3^5} = 3^7 \cdot 3^{-5} = 3^{7-5} = 3^2 = 9
+ \end{equation*}
+
+\end{bsp}
+
+\begin{folg}
+ Die Division durch eine Potenz mit negativem Exponenten entspricht der Multiplikation mit der Potenz und positivem Exponenten.
+ \begin{align*}
+  a^n\div a^{-m} &= a^n \cdot a^m = a^{n+m} \\
+  &= a^{n-(-m)} = a^{n+m}
+ \end{align*}
+
+\end{folg}
+
+\begin{bsp}
+ \begin{equation*}
+  10^3 \div 10^{-4} = 10^3 \cdot 10^4 = 10^{(3+4)} = 10^7
+ \end{equation*}
+\end{bsp}
+
+\begin{beme}[Null als Basis und Exponent]
+ Beachte: Sobald eine Potenz einen negativen Exponenten besitzt, so darf die Basis nicht null sein!
+ \begin{equation*}
+  0^{n} \;\text{nicht definiert, wenn}\; n<0
+ \end{equation*}
+
+ Ist der Exponent positiv oder null, so darf auch die Basis gleich null sein. Es gilt:
+ \begin{align*}
+  0^n &= 0 &&\text{wenn}\;n>0\\
+  0^0 &= 1 \\
+  a^0 &= 1 &&\text{wenn}\;a\in\mathbb{Q}
+ \end{align*}
+
+\end{beme}
+
+\begin{beme}[Einheiten]
+ Manchmal werden Einheiten vor allem in Texten mit negativen Exponenten geschrieben, wenn diese im Nenner eines Bruchs stehen würden. So findet man statt der Geschwindigkeitsangabe \(100\,\frac{\text{km}}{\text{h}}\) auch \(100\,\text{km}\text{h}^{-1}\) oder für die Erdbeschleunigung \(g=9.81\,\text{m}\text{s}^{-2}\).
+\end{beme}
+
+\section{Bruchterme}
+\label{sec:bruchterme}
+
+\begin{defi}[Bruchterm]
+ Einen Term, bei dem eine der Variablen im Nenner eines Bruchs vorkommt, nennt man einen \emph{Bruchterm}. Bei solchen Termen kann für die Variable(n) im Nenner mindestens ein Wert nicht eingesetzt werden. Die Definitionsmenge des Bruchterms muss daher eingeschränkt werden.
+\end{defi}
+
+\begin{bsp}[Bruchterm und Definitionsmenge]
+ \begin{align*}T(x)&=\frac{2}{x-1} \\ x-1\ne0 &\Rightarrow x\ne 1 \\ \mathcal{D}_T &= \mathbb{Q}\setminus\lbrace 1 \rbrace  
+ \end{align*}
+
+\end{bsp}
+
+\begin{regel}[Bestimmung der Definitionsmenge]
+ Um die Definitionsmenge eines Bruchterms festlegen zu können betrachtet man nacheinander alle Nennerterme. Bei jedem einzelnen Nennerterm sucht man die Nullstellen, indem man jeden der Nennerterme gleich Null setzt und nach der Variablen auflöst. Die Werte, die man so erhält, schließt man aus der Grundmenge aus und erhält so die Definitionsmenge.
+ 
+ \begin{align*}
+  \text{Grundmenge}\;\mathcal{G}\\
+  T(x) &=\frac{S(x)}{P(x)\cdot Q(x)} = \frac{S(x)}{P(x)}\cdot \frac{1}{Q(x)}\\
+  P(x) \ne 0 &\Rightarrow x \ne x_1 \\
+  Q(x) \ne 0 &\Rightarrow x \ne x_2 \\
+  \mathcal{D}_T &= \mathcal{G}\setminus \lbrace x_1 ; x_2 \rbrace
+ \end{align*}
+
+\end{regel}
+
+\begin{defi}[Bruchgleichung]
+ Eine Gleichung, in der die gesuchte Größe im Nenner eines Bruchs steht, nennt man eine \emph{Bruchgleichung}.
+\end{defi}
+
+\begin{regel}[Lösen von Bruchgleichungen]
+ Eine Bruchgleichung läst sich am einfachsten dadurch lösen, dass man die komplette Gleichung mit allen Nennern durchmultipliziert, in denen die gesuchte Größe enthalten ist.
+ \begin{align*}
+  \frac{R(x)}{S(x)} &= \frac{P(x)}{Q(x)}&& \vert \cdot S(x)\cdot Q(x)\\
+  \frac{R(x)\cdot S(x) \cdot Q(x)}{S(x)} &= \frac{P(x)\cdot S(x) \cdot Q(x)}{Q(x)} &&\vert \text{K"urzen}\\
+  R(x)Q(x) &= P(x)S(x) &&\vert -P(x)S(x) \\
+  R(x)Q(x)-P(x)S(x) &= 0 &&\vert  \ldots
+ \end{align*}
+ Damit erreicht man, dass nur noch auf einer Seite der Gleichung ein Term steht, der von der gesuchten Größe abhängt. Die gesuchte Größe befindet sich dann nicht mehr im Nenner eines Bruchs.
+\end{regel}
+
+\begin{bsp}[Lösen einer Bruchgleichung]
+ \begin{align*}
+  \frac{2x}{2x-1} &= \frac{x+1}{x} &&\mid \cdot(2x-1) \cdot x\\
+  \frac{2x\cdot (2x-1) \cdot x}{2x-1} &= \frac{(x+1)\cdot(2x-1)\cdot x}{x}&&\mid \text{K"urzen}\\
+  2x\cdot x &= (x+1)\cdot (2x-1) &&\mid \text{Vereinfachen}\\
+  2x^2 &= 2x^2 -x +2x -1 \\ 
+  2x^2 &= 2x^2 +x -1 &&\mid -(2x^2+x-1) \\
+  -x+1 &= 0 \\
+  x &= 1 \\
+  \mathcal{L}&= \lbrace 1\rbrace
+ \end{align*}
+
+\end{bsp}
+
+\chapter{Geometrie bis zur 9.~Jahrgangsstufe}
+\label{ch:geom}
+\epigraph{Denn es ist nicht genug, einen guten Kopf zu haben; die Hauptsache ist, ihn richtig anzuwenden.}{\textit{Diskurs über die Methode}\\\textsc{René Descartes}}
+
+\section{Geometrische Grundbegriffe}
+
+\begin{figure}
+ 
+  \begin{center}
+               \begin{tikzpicture}[x=1cm,y=1cm,scale=0.8]
+               \tkzSetUpPoint[shape=cross out,size=10,color=black]
+\tkzDefPoint(0,0){A}
+\tkzLabelPoint[left](A){$A$}
+\tkzDefPoint(5,0){B}
+\tkzLabelPoint[right](B){$B$}
+\tkzDrawSegment(A,B)
+\tkzLabelSegment[below](A,B){$\overline{AB}$}
+
+\tkzDefPoint(0,-1){C}
+\tkzLabelPoint[left](C){$C$}
+\tkzDefPoint(5,-1){D}
+\tkzLabelPoint[below](D){$D$}
+\tkzDrawLine[add = 0 and .5](C,D)
+\tkzLabelLine[below, pos=1.4](C,D){$\overrightarrow{CD}$}
+
+\tkzDefPoint(0,-2){E}
+\tkzLabelPoint[below](E){$E$}
+\tkzDefPoint(5,-2){F}
+\tkzLabelPoint[below](F){$F$}
+\tkzDrawLine[add = .5 and .5](E,F)
+\tkzLabelLine[below,pos=-0.4](E,F){$EF$}
+
+\tkzDrawPoints(A,B,C,D,E,F)
+\end{tikzpicture}\end{center}
+\caption{Strecke \(\overline{AB}\), Strahl \(\overrightarrow{CD}\) und Gerade \(EF\)}
+\end{figure}
+
+\begin{defi}[Punkt]
+ Ein \emph{Punkt} im Sinne der Geometrie ist ein Objekt ohne Ausdehnung mit einer eindeutig festgelegten Position. Diese Position kann über \emph{Koordinaten} in einem Koordinatensystem angegeben werden. Punkte werden in der Regel mit Großbuchstaben abgekürzt.
+\end{defi}
+
+\begin{bsp}
+ Der Punkt \(A(1|-3)\) hat die x-Koordinate \(x_A=1\) und die y-Koordinate \(y_A=-3\).
+\end{bsp}
+
+\begin{defi}[Strecke, Strahl, Gerade]
+ Eine \emph{Strecke} \(\overline{AB}\) ist die kürzeste Verbindung der beiden Punkte \(A\) und \(B\).\footnote{Man findet auch die Bezeichnung \([AB]\) für die Strecke von \(A\) nach \(B\).} Die Strecke ist durch ihre Endpunkte begrenzt. Die Strecke hat keine Breite.
+ 
+ Eine \emph{Gerade} \(AB\) ist der Ort aller Punkte, die in einer Linie mit der Strecke \(\overline{AB}\) liegen.\footnote{Für die Gerade, die durch \(A\) und \(B\) festgelet ist, findet man auch die Bezeichnung \((AB)\).} Die Gerade ist im Gegensatz zur Strecke nicht begrenzt und daher unendlich lang. Die Gerade hat keine Breite. Zwei voneinander verschiedene Punkte legen stets eine Gerade fest.
+ 
+ Eine \emph{Halbgerade} oder ein \emph{Strahl} \(\overrightarrow{AB}\) ist der Teil der Geraden \(AB\), der beim Punkt \(A\) beginnt, jedoch nicht durch den Punkt \(B\) begrenzt ist.\footnote{Für die Halbgerade wird auch die Bezeichnung \([AB\) oder \([AB)\) verwendet.}
+\end{defi}
+
+\begin{defi}[Länge einer Strecke]
+ Die Länge einer Strecke \(\overline{AB}\) wird mit \(\left| \overline{AB}\right| \) bezeichnet.\footnote{Wird hingegen die Strecke mit \([AB]\) abgekürzt, so bezeichnet \(\overline{AB}\) die Streckenlänge.}
+\end{defi}
+
+
+\begin{defi}[Winkel]
+ Ein \emph{Winkel} ist der Teil der Ebene, der von zwei Strahlen, die im gleichen Punkt beginnen, eingeschlossen wird. Diese beiden Strahlen nennt man dann die \emph{Schenkel} des Winkels. Der gemeinsame Startpunkt heißt \emph{Scheitel}.
+ 
+ Als Maßeinheit für Winkel ist das Gradmaß verbreitet: Ein voller Winkel entspricht 360\degree{}. Winkel misst man im mathematisch positivem Sinn, also entgegen dem Uhrzeigersinn.
+ 
+ \begin{figure}
+ 
+  \begin{center}
+               \begin{tikzpicture}[x=1cm,y=1cm,scale=0.6]
+               \tkzSetUpPoint[shape=cross out,size=10,color=black]
+\tkzDefPoint(0,0){S}
+\tkzLabelPoint[left](S){$S$}
+\tkzDefPoint(5,0){A}
+\tkzLabelPoint[below](A){$A$}
+\tkzDefPoint(64:5){B}
+\tkzLabelPoint[above left](B){$B$}
+\small
+\tkzProtractor[with = half, scale = 0.75](S,A)
+\normalsize
+\tkzDrawLine[add = 0 and .5,color=red](S,A)
+\tkzDrawLine[add = 0 and .5,color=red](S,B)
+\tkzLabelLine[below, pos=1.4](S,A){$s$}
+\tkzLabelLine[above left, pos=1.4](S,B){$t$}
+\tkzDrawPoints(S,A,B)
+\tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+size=1.5](A,S,B)
+\tkzLabelAngle(A,S,B){\(\varphi\)}
+\tkzDefPoint(5,5){tt}
+\tkzLabelPoint[draw,fill=white,%
+text width=3cm,text centered](tt){\(\varphi=\measuredangle ASB=\measuredangle st = 64\text{\degree}\)}
+
+\end{tikzpicture}\end{center}
+\caption{Winkel}
+\end{figure}
+
+\end{defi}
+
+\begin{defi}[Nebenwinkel]
+ Winkel und \emph{Nebenwinkel} ergänzen sich zu 180\degree{}.
+ \begin{figure}
+ 
+  \begin{center}
+               \begin{tikzpicture}[x=1cm,y=1cm,scale=0.6]
+               \tkzSetUpPoint[shape=cross out,size=10,color=black]
+\tkzDefPoint(0,0){S}
+\tkzLabelPoint[below](S){$S$}
+\tkzDefPoint(5,0){A}
+\tkzLabelPoint[below](A){$A$}
+\tkzDefPoint(64:5){B}
+\tkzLabelPoint[above left](B){$B$}
+\tkzDefPoint(180:5){C}
+\tkzLabelPoint[below](C){$C$}
+\small
+\tkzProtractor[with = half, scale = 0.75](S,A)
+\normalsize
+\tkzDrawLine[add = 0 and .5,color=red](S,A)
+\tkzDrawLine[add = 0 and .5,color=red](S,B)
+\tkzDrawLine[add = 0 and .5,color=red](S,C)
+\tkzLabelLine[below, pos=1.4](S,A){$r$}
+\tkzLabelLine[above left, pos=1.4](S,B){$s$}
+\tkzLabelLine[below, pos=1.4](S,C){$t$}
+\tkzDrawPoints(S,A,B,C)
+\tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+size=1.5](A,S,B)
+\tkzLabelAngle(A,S,B){\(\alpha\)}
+\tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+size=1.5](B,S,C)
+\tkzLabelAngle(B,S,C){\(\beta\)}
+\small
+\tkzDefPoint(5,5){tt}
+% \tkzLabelPoint[draw,fill=white,%
+% text width=3cm,text centered, anchor=center](tt){\(\alpha=\measuredangle ASB=\measuredangle rs = 64\text{\degree}\)}
+\tkzDefPoint(-5,5){tt2}
+% \tkzLabelPoint[draw,fill=white,%
+% text width=3cm,text centered, anchor=center](tt2){\(\beta=\measuredangle BSC=\measuredangle st = 116\text{\degree}\)}
+\tkzLabelPoint[draw,fill=white,%
+text width=3cm,text centered, anchor=center](tt2){\(\beta=180\text{\degree}-\alpha = 180\text{\degree}-64\text{\degree} = 116\text{\degree}\)}
+\end{tikzpicture}\end{center}
+\caption{Winkel und Nebenwinkel}
+\end{figure}
+ Auf dem Geo-Dreieck befindet sich auch eine Winkelskala in die Richtung des Uhrzeigersinns. Damit lässt sich der Nebenwinkel leicht ablesen.
+\end{defi}
+
+\begin{defi}[Rechter Winkel]
+ Ein Winkel ist ein \emph{rechter Winkel}, wenn der Winkel gleich seinem Nebenwinkel ist.
+ 
+ Zwei Geraden \(g\) und \(h\), die sich in einem rechten Winkel schneiden nennt man \emph{zueinander senkrecht} bzw. \emph{zueinander orthogonal}. Man schreibt kurz:
+ \begin{equation*}
+  g\perp h
+ \end{equation*}
+
+\end{defi}
+
+\begin{defi}[Senkrechte]
+ Eine \emph{Senkrechte} \(s\) (auch: \emph{Lot} oder \emph{Orthogonale}) zu einer Geraden \(AB\) ist eine Gerade, die mit \(AB\) in einem rechten Winkel schneidet. Es gilt also:
+ \begin{equation*}
+  s \perp AB
+ \end{equation*}
+\end{defi}
+
+\begin{defi}[Parallele]
+ Eine \emph{Parallele} \(p\) zu einer Geraden \(AB\) ist eine Gerade, die in der gleichen Ebene liegt und keinen Punkt mit \(AB\) gemeinsam hat. Man schreibt:
+ \begin{equation*}
+  p \parallel AB
+ \end{equation*}
+\end{defi}
+
+\begin{defi}[Parallelenaxiom]
+ Zu einer Geraden \(g\) gibt es zu jedem nicht auf \(g\) liegenden Punkt \(P\) \textbf{genau eine} Gerade \(h\), die parallel zu \(g\) ist und durch \(P\) verläuft.
+\end{defi}
+
+\begin{regel}[Stufenwinkel]
+ Sind zwei Geraden \(g\) und \(h\) parallel und werden sie von einer dritten Geraden \(s\) geschnitten, so sind einander entsprechende Winkel an den Schnittpunkten gleich. Diese Winkel nennt man die \emph{Stufenwinkel}.
+\end{regel}
+
+\begin{regel}[Wechselwinkel]
+ 
+\end{regel}
+
+\begin{folg}
+ Sind die Geraden \(g\) und \(h\) parallel, so ist jede Senkrechte zu \(g\) auch eine Senkrechte zu \(h\).
+ 
+ \begin{equation*}
+  g\parallel h \; \text{und} \; s\perp g \Rightarrow s\perp h
+ \end{equation*}
+
+\end{folg}
+
+\begin{satz}[Innenwinkelsumme]
+ Die Innenwinkelsumme in einem Dreieck ist stets 180\degree{}.
+ 
+ \begin{figure}  \begin{center}
+               \includegraphics[]{./innenwinkel.pdf}
+% innenwinkel.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+
+               \end{center}
+\caption{Innenwinkelsumme im Dreieck}
+\end{figure}
+\end{satz}
+
+\section{Grundzeichnungen}
+
+\begin{regel}[Parallele zeichnen]
+Eine Parallele zu einer Geraden \(AB\) bzw. zu einer Strecke \(\overline{AB}\) kann durch gezieltes Ausrichten des Geometrie-Dreiecks gezeichnet werden.
+
+ \begin{figure}[htp]
+ \centering
+ \includegraphics[width=\textwidth]{./parallele_zeichnen_pst.pdf}
+ % parallele_zeichnen_pst.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Zeichnen einer Parallele}
+ \label{fig:par_zeichnen}
+\end{figure}
+
+ 
+\end{regel}
+
+
+\section{Grundkonstruktionen}
+
+\begin{regel}[Mittelsenkrechte]
+ 
+ Die Mittelsenkrechte zur Strecke \(\overline{AB}\) ist die Gerade, die die Strecke in der Mitte zwischen den beiden Endpunkten senkrecht schneidet.
+ 
+ Konstruktionsschritte:
+ \begin{enumerate}
+  \item Kreisbogen \(k_1\) um \(A\) mit Radius \(r=\left|\overline{AB}\right|\)
+  \item Kreisbogen \(k_2\) um \(B\) mit Radius \(r=\left|\overline{BA}\right|\)
+  \item Schnittpunkte von \(k_1\) und \(k_2\) zur Geraden \(m\) verbinden. 
+ \end{enumerate}
+ Dann ist \(m\) die Mittelsenkrechte und der Schnittpunkt von \(m\) mit \(AB\) der Mittelpunkt der Strecke \(\overline{AB}\).
+
+ \begin{figure}[t]
+ \centering
+ \includegraphics[width=.8\textwidth]{./mittelsenkrechte.pdf}
+ % mittelsenkrechte.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Konstruktion der Mittelsenkrechten}
+ \label{fig:mittelsenkrechte}
+\end{figure}
+\end{regel}
+
+\begin{regel}[Winkelhalbierende]
+
+Die Winkelhalbierende ist diejenigen Gerade, die den Winkel, den zwei Strecken, Strahlen oder Geraden miteinander einschließen, genau in der Mitte teilt.
+
+Konstruktionsschritte:
+\begin{enumerate}
+ \item Kreisbogen um den Scheitel des Winkels \(S\). Die Schnittpunkte mit den Geraden sind \(P\) und \(Q\).
+ \item Konstruktion der Mittelsenkrechten \(w\) von \(\overline{PQ}\).
+\end{enumerate}
+Die Gerade \(w\) ist dann die Winkelhalbierende von \(\measuredangle QSP\).
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{./winkelhalbierende.pdf}
+ % winkelhalbierende.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Konstruktion der Winkelhalbierenden}
+ \label{fig:winkelhalbierende}
+\end{figure}
+\end{regel}
+
+\begin{regel}[Lot durch einen Punkt]
+Zu einer Geraden~\(g\) soll ein Lot, also eine senkrechte Gerade, durch einen Punkt~\(P\) konstruiert werden. Dabei ist es unerheblich, ob \(P\) auf der Geraden oder neben ihr liegt.
+
+Konstruktionsschritte:
+\begin{enumerate}
+ \item Kreisbogen um den Punkt \(P\) mit einem Radius, der groß genug ist, damit zwei Schnittpunkte \(C\) und \(D\) mit der Geraden \(g\) vorliegen.
+ \item Konstruktion der Mittelsenkrechten zu \(\overline{CD}\).
+\end{enumerate}
+
+\begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{./lot_konstr.pdf}
+ % lot_konstr.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Konstruktion eines Lots auf eine Gerade $g$ durch einen Punkt $P$}
+ \label{fig:lot_konstr}
+\end{figure}
+
+\end{regel}
+
+
+\begin{regel}[Parallele durch einen Punkt]
+
+Zu einer Geraden~\(g\) und einem Punkt~\(P\), der nicht auf der Geraden liegt, soll eine Gerade so konstruiert werden, dass sie durch \(P\) läuft und parallel zu \(g\) liegt.
+
+Konstruktionsschritte:
+\begin{enumerate}
+ \item Konstruiere ein Lot zu \(g\) durch \(P\). Zeichne dabei den vollen Kreis um \(P\).
+ \item Der Kreis um \(P\) hat auch zwei Schnittpunkte \(R,S\) mit dem Lot zu \(g\) durch \(P\).
+ \item Konstruiere die Mittelsenkrechte zu \(\overline{RS}\).
+\end{enumerate}
+
+ \begin{figure}[t]
+ \centering
+ \includegraphics[width=\textwidth]{./parallele_konstr.pdf}
+ % parallele_konstr.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Konstruktion einer Parallelen zur Geraden~$g$ durch einen Punkt~$P$}
+ \label{fig:parallele_konstruktion}
+\end{figure}
+
+\end{regel}
+
+\section{Symmetrie}
+
+Achsensymmetrie und Punktsymmetrie
+
+
+\section{Dreiecksgeometrie}
+
+\begin{defi}[Gleichschenkliges Dreieck]
+ Ein Dreieck, das zwei gleich lange Seiten besitzt, nennt man \emph{gleichschenklig}.
+ 
+ Die dritte Seite im gleichschenkligen Dreieck nennt man die \emph{Basis}. Die Winkel zwischen Basis und den gleich langen Seiten nennt man die \emph{Basiswinkel}.
+ 
+ Ein gleichschenkliges Dreieck ist immer achsensymmetrisch zur Mittelsenkrechte auf die Basis.
+ 
+ In einem gleichschenkligen Dreieck sind die Basiswinkel gleich groß.
+\end{defi}
+
+\begin{defi}[Gleichseitiges Dreieck]
+ Ein Dreieck, bei dem alle Seiten gleich lang sind, nennt man \emph{gleichseitig}. Dann sind auch alle Winkel gleich groß -- jeweils \(60\degree\).
+\end{defi}
+
+\begin{regel}[Umkreis]
+ Jedes Dreieck besitzt einen Kreis, auf dem alle Eckpunkte liegen. Diesen Kreis nennt man den \emph{Umkreis} des Dreiecks.
+ Somit liegt der Mittelpunkt des Umkreises von den drei Eckpunkten gleich weit entfernt. Dieser Mittelpunkt entspricht dem \emph{Schnittpunkt der Mittelsenkrechten} zweier beliebig gewählter Dreiecksseiten. Um den Mittelpunkt des Umkreises zu finden, ist es egal zu welchen beiden Dreiecksseiten man die Mittelsenkrechte konstruiert, da sich alle Mittelsenkrechten im gleichen Punkt schneiden.
+ 
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=.8\textwidth]{./umkreis.pdf}
+ % umkreis.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Konstruktion des Umkreises}
+ \label{fig:umkreis}
+\end{figure}
+ 
+ Bei stumpfwinkeligen Dreiecken liegt der Mittelpunkt des Umkreises außerhalb des Dreiecks; bei spitzwinkeligen Dreiecken liegt der Umkreismittelpunkt innerhalb der Dreiecksfläche.
+\end{regel}
+
+\begin{regel}[Inkreis]
+ Jedes Dreieck besitzt einen Kreis, der von Innen alle Seiten des Dreiecks berührt. Diesen Kreis nennt man den \emph{Inkreis} des Dreiecks. Der Mittelpunkt des Inkreises ist also von allen Seiten des Dreiecks gleich weit entfernt. Der Mittelpunkt des Inkreises ist der \emph{Schnittpunkt der Winkelhalbierenden} zweier beliebig gewählter Winkel des Dreiecks. Auch hier ist es egal, welche beiden Winkel man zur Konstruktion der Winkelhalbierenden auswählt, da sich alle Winkelhalbierenden im gleichen Punkt schneiden.
+ 
+ \begin{figure}[ht]
+ \centering
+ \includegraphics{./inkreis.pdf}
+ % inkreis.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Konstruktion des Inkreises}
+ \label{fig:inkreis}
+\end{figure}
+
+ 
+\end{regel}
+
+\begin{satz}[Satz des Thales]
+ Wenn der Punkt~\(C\) auf einem Kreis liegt, dessen Durchmesser die Strecke \(\overline{AB}\) ist, dann ist das Dreieck \(\triangle ABC\) rechtwinklig.\footnote{Dieser Satz ist benannt nach \textsc{Thales von Milet}.}
+\end{satz}
+
+\begin{figure}[htp]
+ \centering
+ \includegraphics{./thaleskreis.pdf}
+ % thaleskreis.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Der Thaleskreis}
+ \label{fig:thaleskreis}
+\end{figure}
+
+
+\begin{bew}[Satz des Thales]
+ Sei \(M\) der Mittelpunkt der Strecke \(\overline{AB}\). Betrachte das Dreieck \(\triangle AMC\): Da \(C\) auf dem Kreis um \(M\) mit Radius \(r=\left|\overline{MA}\right|\) liegt, gilt \(\left|\overline{MC}\right|=\left|\overline{MA}\right|\). Damit ist das Dreieck \(\triangle AMC\) gleichschenklig. Die Basiswinkel in einem gleichschenkligen Dreieck sind gleich. Also gilt: \(\measuredangle MAC = \alpha = \measuredangle ACM\).
+ 
+ Betrachte nun das Dreieck \(\triangle BMC\): Da \(C\) auf dem Kreis um \(M\) mit Radius \(r=\left|\overline{MB}\right|\) liegt, gilt \(\left|\overline{MC}\right|=\left|\overline{MB}\right|\). Damit ist das Dreieck \(\triangle BMC\) gleichschenklig. Die Basiswinkel in einem gleichschenkligen Dreieck sind gleich. Also gilt: \(\measuredangle CBM = \beta = \measuredangle MCB\). Insgesamt gilt:
+ \begin{align*}
+  \gamma &= \measuredangle ACB = \measuredangle ACM + \measuredangle MCB\\
+  \gamma &= \alpha + \beta
+ \end{align*}
+ 
+ Da die Innenwinkelsumme in jedem Dreieck \(180\degree\) beträgt, gilt:
+ \begin{align*}
+  \alpha + \beta + \gamma &= 180\degree\\
+  2 \gamma &= 180\degree &&|\div 2\\
+  \gamma &= 90\degree  
+ \end{align*}
+\end{bew}
+
+Da in diesem Beweis alle Argumente umkehrbar sind, gilt auch die Umkehrung des Satz des Thales.
+
+\begin{satz}
+ Ist ein Dreieck rechtwinklig, so liegt einer der Punkte auf dem Kreis, dessen Durchmesser die gegenüberliegende Seite bildet. Diesen Kreis nennt man den \emph{Thaleskreis}. 
+\end{satz}
+
+\section{Ähnlichkeit}
+
+\begin{defi}[Ähnlichkeit]
+ Zwei Figuren sind zueinander ähnlich, wenn ihre Winkel und Streckenverhältnisse übereinstimmen.
+ 
+ Kongruenz ist ein Spezialfall der Ähnlichkeit: Kongruente Figure sind ähnlich. Ähnliche Figuren sind aber nicht unbedingt kongruent.
+\end{defi}
+
+\begin{regel}[Ähnlichkeit von Dreiecken]
+
+Zwei Dreiecke sind zueinander ähnlich, wenn sie\ldots
+\begin{itemize}
+ \item in zwei Winkeln (und somit auch im dritten),
+ \item in einem Winkel und einem Streckenverhältnis oder
+ \item in zwei Streckenverhältnissen übereinstimmen.
+\end{itemize}
+\end{regel}
+
+\section{Strahlensätze}
+
+\begin{regel}[Strahlensatz V-Figur]
+
+\begin{figure}[htp]
+ \centering
+ \includegraphics{./strahlensatz_v.pdf}
+ % strahlensatz_v.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Strahlensätze an der V-Figur}
+ \label{fig:strahlensatz_v}
+\end{figure}
+ 
+ 
+\end{regel}
+
+\begin{regel}[Strahlensatz X-Figur]
+ 
+ \begin{figure}[htp]
+ \centering
+ \includegraphics{./strahlensatz_x.pdf}
+ % strahlensatz_x.pdf: 0x0 pixel, 300dpi, 0.00x0.00 cm, bb=
+ \caption{Strahlensätze an der X-Figur}
+ \label{fig:strahlensatz_x}
+\end{figure}
+
+ 
+\end{regel}
+
+
+\section{Zentrische Streckung}
+
+\chapter{Grundwissen Wahrscheinlichkeitsrechnung}
+
+\epigraph{Spielen ist Experimentieren mit dem Zufall.}{\textit{Fragmente}\\\textsc{Novalis}}
+
+\section{Grundbegriffe der Stochastik}
+
+\begin{defi}[Zufallsexperiment]
+ Ein \emph{Zufallsexperiment} ist reales, physisches Experiment mit nicht-vorhersagbarem oder bewusst beeinflussbarem Ausgang, das -- zumindest im Prinzip -- beliebig oft durchgeführt (reproduziert) werden kann.
+\end{defi}
+
+\begin{bsp}[Zufallsexperimente]
+ Zufallsexperimente, die Du kennen solltest, sind:
+ \begin{itemize}
+  \item Werfen einer Münze
+  \item Werfen eines oder mehrerer Würfel
+  \item Verdecktes Ziehen einer Karte aus einem gemischten Stapel
+  \item Ziehen eines Loses aus einer Lostrommel
+  \item Ziehen aus einer \emph{Urne}
+ \end{itemize}
+ Als \emph{Urne} bezeichnet man ein Gefäß, dessen Inhalt von außen nicht erkennbar ist.
+\end{bsp}
+
+\begin{defi}[Ergebnis]
+ Unter einem \emph{Ergebnis} versteht man eine Beschreibung eines möglichen Ausgangs eines Zufallsexperiments. Ergebnisse werden in der Regel mit einem kleinen Omega \(\omega\) abgekürzt.
+
+Oft ist es zweckmäßig die Ergebnisse abhängig von der Art des Zufallsexperiments zu benennen (z.B. Augenzahl beim Würfeln).
+\end{defi}
+
+\begin{defi}[Ergebnisraum]
+ Die Menge, die alle möglichen Ergebnisse eines Zufallsexperiments enthält nennt man den \emph{Ergebnisraum}. Der Ergebnisraum wird in der Regel mit einem großen Omega \(\Omega\) abgekürzt.
+ 
+ Für jedes Ergebnis \(\omega\) eines Zufallsexperiments gilt: \begin{equation*}                                              \omega \in \Omega                                      \end{equation*}
+ 
+ Die Mächtigkeit des Ergebnisraums entspricht der Anzahl der möglichen, unterscheidbaren Ergebnisse.
+\end{defi}
+
+\begin{bsp}[Ergebnisraum]
+Ergebnisräume und ihre Mächtigkeiten zu verschiedenen Zufallsexperimenten:
+\begin{align*}
+ \intertext{Münzwurf}
+ \Omega &= \lbrace \text{Kopf}, \text{Zahl} \rbrace & |\Omega| &= 2\\
+ \intertext{Werfen eines Würfels}
+ \Omega &= \lbrace 1; 2; 3; 4; 5; 6 \rbrace & |\Omega| &= 6\\
+ \intertext{Zweifacher Münzwurf}
+ \Omega &= \left\lbrace (K,K);(K,Z);(Z,K);(Z,Z)\right\rbrace & |\Omega| &= 4 \\
+ \intertext{Werfen zweier Würfel}
+ \Omega &= \begin{array}{rcl}
+            \lbrace & (1,1);(1,2);(1,3); \ldots ;(1,6); & \\
+            & (2,1);(2,2);(2,3); \ldots ;(2,6); & \\
+            & \vdots \hfill \vdots & \\
+            & (6,1);(6,2);(6,3); \ldots ;(6,6) & \rbrace
+           \end{array} & |\Omega| &= 36
+\end{align*}
+\end{bsp}
+
+\begin{defi}[Ereignis]
+Ein \emph{Ereignis} \(A\) ist eine Teilmenge des Ergebnisraums. D.h. mehrere Ergebnisse eines Zufallsexperiments können zu einem Ereignis zusammengefasst werden. Ereignisse werden normalerweise mit lateinischen Großbuchstaben abgekürzt.
+\begin{align*}
+ A \subset \Omega
+\end{align*}
+\end{defi}
+
+\begin{bsp}[Ereignis]
+ Betrachtet wird das Zufallsexperiment "`Werfen eines Würfels"'. Das Ereignis \(A\) trete ein, wenn die Augenzahl des Würfels mindestens 5 beträgt. Dann gilt:
+ \begin{align*}
+  A = \lbrace 5;6\rbrace &\subset \lbrace
+  1;2;3;4;5;6\rbrace = \Omega
+ \end{align*}
+\end{bsp}
+
+\begin{defi}[Gegenereignis]
+ Jedes Ereignis \(A\) besitzt ein Gegenteil, das \emph{Gegenereignis} \(\overline{A}\). Das Gegenereignis ist das \emph{Komplement} der Menge \(A\) über der Grundmenge \(\Omega\).
+ \begin{equation*}
+  \overline{A} = \Omega \setminus A
+ \end{equation*}
+ Das Gegenereignis besteht also aus allen Ergebnissen, die nicht im Ereignis enthalten sind.
+\end{defi}
+
+\begin{bsp}[Gegenereignis]
+ Betrachtet wird das Zufallsexperiment "`Augensumme bei Werfen zweier Würfel"'.
+ \begin{align*}
+  \Omega &= \lbrace 2;3;4;\ldots;12\rbrace \\
+  \intertext{\(A\): "`Augensumme beträgt mindestes 5."'}
+   A&= \lbrace 5;6;7;\ldots;12\rbrace \\
+   \intertext{\(\overline{A}\): "`Augensumme beträgt weniger als 5."'}
+   \overline{A} &= \Omega \setminus A = \lbrace 2;3;4 \rbrace
+ \end{align*}
+  
+\end{bsp}
+ \begin{regel}[Gegenereignis bilden]
+  Die Beschreibung des Gegenereignisses entsteht durch logische Verneinung der Beschreibung des zugehörigen Ereignisses. Eigentlich würde es also genügen, der Beschreibung ein "`nicht"' voran zu stellen.
+ \end{regel}
+
+\section{Laplace-Wahrscheinlichkeit}
+
+\begin{defi}[\textsc{Laplace}-Experiment]
+Ein \emph{Laplace-Experiment} ist ein Zufallsexperiment, bei dem alle Ergebnisse gleich wahrscheinlich sind. Ist die Wahrscheinlichkeit eines Ergebnisses bekannt, so kennt man auch die Wahrscheinlichkeiten der anderen Ergebnisse.
+
+Das Laplace-Experiment stellt eine Idealisierung eines Zufallsexperiments dar, dem eine Symmetrie innewohnt. Laplace-Experimente sind insbesondere nicht "`gezinkt"'. Solche Idealisierungen werden auch zur Modellierung komplexer Sachverhalte herangezogen.
+
+Beispiele für Laplace-Experimente sind:
+\begin{itemize}
+ \item Der Wurf eines idealen Würfels
+ \item Der Wurf einer idealen Münze 
+ \item Das Ziehen aus einer Urne, in der alle Objekte unterscheidbar sind.
+\end{itemize}
+\end{defi}
+
+\begin{defi}[\textsc{Laplace}-Wahrscheinlichkeit]
+ Da bei einem 
+ 
+\end{defi}
+
+
+\section{Kombinatorische Grundelemente}
+
+\begin{defi}[Fakultät]
+ Die Fakultät ist eine Abkürzung für die forgesetzte Multiplikation natürlicher Zahlen mit ihren Vorgängern.
+ \begin{whitebox}
+ \begin{align*}
+  n! = n\cdot (n-1) \cdot (n-2) \cdot \ldots \cdot 2 \cdot 1
+ \end{align*}
+ \end{whitebox}
+ 
+ Beispiele für Fakultäten sind:
+ 
+\end{defi}
+
+\begin{regel}[Anordnungsmöglichkeiten]
+ Man spricht auch von der \emph{\(n\)-Permutation}.
+\end{regel}
+
+\begin{regel}[Ziehen mit Zurücklegen und unter Beachtung der Reihenfolge]
+ 
+\end{regel}
+
+
+

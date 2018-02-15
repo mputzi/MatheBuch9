@@ -1,0 +1,60 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+\begin{tikzpicture}[x=1cm,y=1cm]
+\draw (0,0)  coordinate (A)  -- node[below,sloped] {\(c\)} (5,0) coordinate (B) -- node[above,sloped] {\(a\)} +(143.1:4) coordinate (C) -- node[above,sloped] {\(b\)} (A);
+\draw (A) node[anchor=north east] (An){\(A\)};
+\draw (B) node [anchor=north west] (Bn) {\(B\)};
+\draw (C) node [anchor=south] (Cn) {\(C\)};
+\draw (2.5,0) coordinate (M) node [anchor=south west] (Mn) {\(M\)};
+\draw (M) circle(1pt);
+\draw[dashed] (M) -- (C);
+% \draw[dashed] (2.5,0) circle (2.5cm);
+\draw[draw=blue, thick] (2.5,0) circle (2.5cm);
+\path[
+  postaction={decorate ,decoration={text along path,
+    text={\ Thaleskreis\ }, text align=center,
+    text effects/.cd,  
+    every character/.style={fill=white, yshift=-0.5ex}}}]
+  (2.5, 3) arc [start angle=-270, end angle=90, radius=2.7];
+\clip (A)--(B)--(C);
+\draw (C) circle (0.5cm);
+\fill[black] (C) ++(-80:0.25) circle (1pt);
+\draw (A) circle (1cm);
+\draw (B) circle (1.5cm);
+\draw (A) ++(30:0.6) node{\(\alpha\)};
+\draw (B) ++(165:1) node{\(\beta\)};
+\end{tikzpicture}
+
+\end{document}

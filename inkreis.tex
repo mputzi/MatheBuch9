@@ -1,0 +1,74 @@
+
+
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[euler-digits]{eulervm} % Math Font
+\usepackage{gensymb} % Text Symbols
+\usepackage{amsmath,amssymb,mathtools} % Math
+
+\usepackage{tikz, pgfplots} % Figures
+\usetikzlibrary{fit}
+\usepackage{tkz-euclide}
+\usetkzobj{all}
+\usetikzlibrary{shadows} %defines shadows
+\usetikzlibrary{decorations.text}
+
+% \pagestyle{empty}
+% \headheight=0pt
+% \headsep=0pt
+% \paperwidth=14cm
+% \paperheight=10cm
+% \topmargin=0cm
+% \oddsidemargin=-2cm
+% \evensidemargin=0cm
+% \parindent=0sp
+% \special{papersize=\the\paperwidth,\the\paperheight}
+%opening
+\title{}
+\author{}
+
+
+
+\begin{document}
+\begin{tikzpicture}
+\tkzSetUpPoint[shape=cross out,size=10,color=black]
+\tkzInit[ymin=0,ymax=2,xmin=0,xmax=5]
+\tkzClip[space=.5]
+
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDrawTriangle[two angles=45 and 35](A,B) \tkzGetPoint{C}
+
+\tkzLabelPoint[left](A){$A$}
+\tkzLabelPoint[right](B){$B$}
+\tkzLabelPoint[above](C){$C$}
+
+\tkzDefLine[bisector](C,A,B) \tkzGetPoint{X}
+\tkzDrawLine[add= 0 and 5,color=orange](A,X)
+\tkzDefLine[bisector](A,B,C) \tkzGetPoint{Y}
+\tkzDrawLine[add= 0 and 1,color=orange](B,Y)
+\tkzShowLine[bisector,size=2,gap=4](C,A,B)
+\tkzShowLine[bisector,size=2,gap=4](A,B,C)
+
+\tkzInterLL(A,X)(B,Y) \tkzGetPoint{M}
+\tkzDrawPoint(M)
+\tkzDefPointBy[projection=onto A--B](M) \tkzGetPoint{T}
+
+\tkzDrawSegment[dotted,color=gray](M,T)
+\tkzMarkRightAngle(M,T,A)
+\tkzDrawCircle[color=blue](M,T)
+
+% \tkzMarkRightAngle(A,C,B)
+% \tkzMarkAngle[fill=blue, opacity=.3, %mkpos=.2,%
+% size=1](B,A,C)
+% \tkzLabelAngle[pos=.75](B,A,C){\(\alpha\)}
+% \tkzMarkAngle[fill=green!50!black, opacity=.3, %mkpos=.2,%
+% size=1](C,B,A)
+% \tkzLabelAngle[pos=.75](C,B,A){\(\beta\)}
+
+\end{tikzpicture}
+
+
+\end{document}

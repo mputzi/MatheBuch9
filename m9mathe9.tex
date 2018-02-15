@@ -2001,6 +2001,31 @@ Die trigonometrischen Beziehungen Sinus, Kosinus und Tangens stellen einen Zusam
 
 \end{folg}
 
+\begin{ssatz}
+ Die Summe der Quadrate von Sinus und Kosinus des gleichen Winkels ergibt immer den Wert \(1\).
+ 
+ \begin{blockwhitebox}
+  \begin{equation*}
+   \sin^2 \alpha + \cos^2 \alpha = 1 
+  \end{equation*}
+
+ \end{blockwhitebox}
+
+\end{ssatz}
+\begin{bew}
+ Angenommen \(\alpha\) ist der Winkel im rechtwinkligen Dreieck \(\triangle ABC\), dann gilt:
+ \begin{align*}
+  \sin \alpha &= \frac{a}{c} & \cos \alpha &= \frac{b}{c} 
+  \end{align*}
+  Einsetzen liefert:
+  \begin{align*}
+  (\sin \alpha)^2 + (\cos \alpha)^2 &= \left(\frac{a}{c}\right)^2 + \left(\frac{b}{c}\right)^2 = \frac{a^2}{c^2} + \frac{b^2}{c^2} \\
+  &= \frac{a^2+b^2}{c^2}
+  \intertext{Satz des Pythagoras:}
+  &= \frac{c^2}{c^2} = 1
+ \end{align*}
+
+\end{bew}
 
 \begin{defi}[Tangens]
  Der \emph{Tangens} eines Winkels \(\alpha\) bezeichnet das Verhältnis der Streckenlänge von Gegenkathete \(a\) zu Ankathete \(b\) in einem rechtwinkligen Dreieck \(\triangle ABC\).
@@ -2095,11 +2120,32 @@ In einem Dreieck, dessen Hypotenusenlänge 1 beträgt, entsprechen die Längen d
  
 \end{beme}
 
+\begin{defi}[Arkusfunktionen]
+Die trigonometrischen Funktionen liefern zu einem Winkel das entsprechende Streckenverhältnis in einem rechtwinkligen Dreieck. Sind jedoch zwei Streckenlängen eines rechtwinkligen Dreieck oder auch nur ihr Verhältnis bekannt, so lassen sich aus dieser Information auch die Winkel im Dreieck berechnen. Dazu benötigt man die Umkehrungen bzw. \emph{Inversionen} von \(\sin\), \(\cos\) und \(\tan\). Diese nennt man die \emph{Arkusfunktionen} \(\arcsin\), \(\arccos\) und \(\arctan\).
 
+Es gilt:
+\begin{align*}
+ \sin (\alpha) = \frac{a}{c} &\Rightarrow \alpha = \arcsin \left( \frac{a}{c}\right) \\
+  \cos (\alpha) = \frac{b}{c} &\Rightarrow \alpha = \arccos \left( \frac{b}{c}\right) \\
+  \tan (\alpha) = \frac{a}{b} &\Rightarrow \alpha = \arctan \left( \frac{a}{b}\right) \\
+\end{align*}
 
-\begin{defi}[Umkehrungen der trig. Funktionen]
- 
+Statt der Schreibweise mit der Vorsilbe arc- findet man vor allem auf Taschenrechnern auch die abkürzende Schreibweise mit \emph{hoch -1} am Bezeichner der Funktion. Manchmal wird auch nur ein "`a"' vor die Fuktion gesetzt.
+\begin{align*}
+ \sin^{-1} (x) &= \arcsin (x) = \textrm{asin} (x)\\
+ \cos^{-1} (x) &= \arccos (x) = \textrm{acos} (x)\\
+ \tan^{-1} (x) &= \arctan (x) = \textrm{atan} (x)
+\end{align*}
+Beachte: Hierbei handelt es sicht \emph{nicht} um eine Potenz. Mit \emph{hoch -1} ist also \emph{nicht} der Kehrbruch gemeint, sondern die Umkehrung der jeweiligen Funktion. Daher gilt:
+\begin{align*}
+ \sin^{-1}\left( \sin (\alpha) \right) &= \alpha
+\end{align*}
 \end{defi}
+
+\begin{beme}[Definitonsmenge der Arkusfunktionen]
+ 
+\end{beme}
+
 
 
 \begin{beme}[Potenzen trigonometrischer Funktionen]
@@ -2107,17 +2153,7 @@ In einem Dreieck, dessen Hypotenusenlänge 1 beträgt, entsprechen die Längen d
 \end{beme}
 
 
-\begin{ssatz}
- Die Summe der Quadrate von Sinus und Kosinus des gleichen Winkels ergibt immer den Wert \(1\).
- 
- \begin{blockwhitebox}
-  \begin{equation*}
-   \sin^2 \alpha + \cos^2 \alpha = 1 
-  \end{equation*}
 
- \end{blockwhitebox}
-
-\end{ssatz}
 
 \section{Prisma, Pyramide, Zylinder \& Kegel}
 
